@@ -1,0 +1,20 @@
+{
+  "name": "Software Eng. Project",
+  "version": "1.0.0",
+  "description": "Full Stack Analytics Web app",
+  "main": "server.js",
+  "author": "Zeeshan Habib, Katie Syron, Jonathan Lai, Sean O'reilly",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.9",
+    "morgan": "^1.6.1",
+    "request": "^2.67.0"
+  },
+  "devDependencies": {
+    "should": "^7.1.1",
+    "supertest": "^1.1.0",
+    "nodemon": "^1.18.10",
+  }
+}
