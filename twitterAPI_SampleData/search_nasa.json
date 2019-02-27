@@ -1,0 +1,1911 @@
+{
+  "statuses": [
+    {
+      "created_at": "Mon Feb 25 20:05:08 +0000 2019",
+      "id": 1100124557141192700,
+      "id_str": "1100124557141192704",
+      "text": "An iceberg twice the size of NYC is about to break from Antarctica. NASA says it will be the biggest piece to break… https://t.co/4pgazpLpMR",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/4pgazpLpMR",
+            "expanded_url": "https://twitter.com/i/web/status/1100124557141192704",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 110396781,
+        "id_str": "110396781",
+        "name": "AJ+",
+        "screen_name": "ajplus",
+        "location": "",
+        "description": "AJ+ is news for the connected generation, sharing human struggles and challenging the status quo.",
+        "url": "http://t.co/ajmT5k7yEI",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/ajmT5k7yEI",
+                "expanded_url": "http://ajplus.net",
+                "display_url": "ajplus.net",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 995613,
+        "friends_count": 365,
+        "listed_count": 9983,
+        "created_at": "Mon Feb 01 11:53:42 +0000 2010",
+        "favourites_count": 2307,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "verified": true,
+        "statuses_count": 65607,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "FFFFFF",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1012020793348198401/ohNwCtH9_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1012020793348198401/ohNwCtH9_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/110396781/1530119565",
+        "profile_link_color": "6CC5F5",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "8F8A89",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 8039,
+      "favorite_count": 9922,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Tue Feb 26 02:02:00 +0000 2019",
+      "id": 1100214367902142500,
+      "id_str": "1100214367902142464",
+      "text": "Thank you, Moon! 🌘 Our home planet’s signature 23.5-degree tilt on its axis is due to the Moon keeping it in check.… https://t.co/8va8B95m9I",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/8va8B95m9I",
+            "expanded_url": "https://twitter.com/i/web/status/1100214367902142464",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 1879,
+      "favorite_count": 9498,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 03:15:34 +0000 2019",
+      "id": 1099870490200604700,
+      "id_str": "1099870490200604674",
+      "text": "Congratulations to @FirstManMovie on your visual effects #Oscars win. As we celebrate the #Apollo50th anniversary t… https://t.co/ktwE9OEPPI",
+      "truncated": true,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "Oscars",
+            "indices": [
+              57,
+              64
+            ]
+          },
+          {
+            "text": "Apollo50th",
+            "indices": [
+              90,
+              101
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "FirstManMovie",
+            "name": "First Man",
+            "id": 922964813403250700,
+            "id_str": "922964813403250688",
+            "indices": [
+              19,
+              33
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/ktwE9OEPPI",
+            "expanded_url": "https://twitter.com/i/web/status/1099870490200604674",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 962,
+      "favorite_count": 5041,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Tue Feb 26 03:15:54 +0000 2019",
+      "id": 1100232963944534000,
+      "id_str": "1100232963944534016",
+      "text": "Or, so @SenateMajLdr McConnell understands: \n\n“An Iceberg the Size of Pulaski County, Kentucky Could Soon Break Off… https://t.co/ypJ2xcitNr",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "senatemajldr",
+            "name": "Leader McConnell",
+            "id": 1249982359,
+            "id_str": "1249982359",
+            "indices": [
+              7,
+              20
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/ypJ2xcitNr",
+            "expanded_url": "https://twitter.com/i/web/status/1100232963944534016",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 17494010,
+        "id_str": "17494010",
+        "name": "Chuck Schumer",
+        "screen_name": "SenSchumer",
+        "location": "New York, NY",
+        "description": "Official account of Senator Chuck Schumer - New York’s Senator RT≠endorsement",
+        "url": "https://t.co/8Vw6E2f47h",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/8Vw6E2f47h",
+                "expanded_url": "http://schumer.senate.gov",
+                "display_url": "schumer.senate.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 1705416,
+        "friends_count": 25856,
+        "listed_count": 9884,
+        "created_at": "Wed Nov 19 20:10:20 +0000 2008",
+        "favourites_count": 211,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 14536,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "43090B",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/978655909198036993/Gpnx2Os2_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/978655909198036993/Gpnx2Os2_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/17494010/1522865010",
+        "profile_link_color": "FF6005",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "E7E9EF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": true,
+      "quoted_status_id": 1099764150933340200,
+      "quoted_status_id_str": "1099764150933340163",
+      "quoted_status": {
+        "created_at": "Sun Feb 24 20:13:00 +0000 2019",
+        "id": 1099764150933340200,
+        "id_str": "1099764150933340163",
+        "text": "Cracking across Antarctica’s Brunt Ice Shelf is set to release an iceberg w/ an area about 2x the size of NYC. The… https://t.co/PjlPBR42ck",
+        "truncated": true,
+        "entities": {
+          "hashtags": [],
+          "symbols": [],
+          "user_mentions": [],
+          "urls": [
+            {
+              "url": "https://t.co/PjlPBR42ck",
+              "expanded_url": "https://twitter.com/i/web/status/1099764150933340163",
+              "display_url": "twitter.com/i/web/status/1…",
+              "indices": [
+                116,
+                139
+              ]
+            }
+          ]
+        },
+        "metadata": {
+          "result_type": "popular",
+          "iso_language_code": "en"
+        },
+        "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 11348282,
+          "id_str": "11348282",
+          "name": "NASA",
+          "screen_name": "NASA",
+          "location": "",
+          "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+          "url": "https://t.co/TcEE6NS8nD",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "https://t.co/TcEE6NS8nD",
+                  "expanded_url": "http://www.nasa.gov",
+                  "display_url": "nasa.gov",
+                  "indices": [
+                    0,
+                    23
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": []
+            }
+          },
+          "protected": false,
+          "followers_count": 30402368,
+          "friends_count": 297,
+          "listed_count": 93536,
+          "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+          "favourites_count": 4984,
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "verified": true,
+          "statuses_count": 54911,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "is_translation_enabled": false,
+          "profile_background_color": "000000",
+          "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+          "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+          "profile_link_color": "205BA7",
+          "profile_sidebar_border_color": "000000",
+          "profile_sidebar_fill_color": "F3F2F2",
+          "profile_text_color": "000000",
+          "profile_use_background_image": true,
+          "has_extended_profile": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false,
+          "translator_type": "regular"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 1803,
+        "favorite_count": 3273,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 3960,
+      "favorite_count": 9773,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Tue Feb 26 08:31:26 +0000 2019",
+      "id": 1100312368846757900,
+      "id_str": "1100312368846757888",
+      "text": "Hindi ako malinis. Malandi rin ako. Pero nasa lugar 😊",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "tl"
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 46160767,
+        "id_str": "46160767",
+        "name": "Lloyd Cafe Cadena",
+        "screen_name": "LloydCadena",
+        "location": "Paranaque City, National Capit",
+        "description": "I love my @Cadenators ❤️ | 📞 Inquiries? Pls contact Ely - 09495696476 | 📧 lloydcafecadena@yahoo.com",
+        "url": "https://t.co/TRWCQNyuGJ",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TRWCQNyuGJ",
+                "expanded_url": "https://www.youtube.com/c/lloydcafecadenatv",
+                "display_url": "youtube.com/c/lloydcafecad…",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 481938,
+        "friends_count": 1230,
+        "listed_count": 321,
+        "created_at": "Wed Jun 10 16:58:53 +0000 2009",
+        "favourites_count": 38361,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "verified": true,
+        "statuses_count": 96448,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme15/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme15/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/964117758324568064/hnM2EglW_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/964117758324568064/hnM2EglW_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/46160767/1518698531",
+        "profile_link_color": "000000",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "C0DFEC",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 2074,
+      "favorite_count": 7399,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "tl"
+    },
+    {
+      "created_at": "Mon Feb 25 21:35:32 +0000 2019",
+      "id": 1100147306656157700,
+      "id_str": "1100147306656157697",
+      "text": "Voila! The ingredients for life on Earth. 🌎Astrobiologists have recreated their own mini seafloor vents: where life… https://t.co/9vlg0XR0op",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/9vlg0XR0op",
+            "expanded_url": "https://twitter.com/i/web/status/1100147306656157697",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 916,
+      "favorite_count": 4168,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 23:26:28 +0000 2019",
+      "id": 1100175223633166300,
+      "id_str": "1100175223633166336",
+      "text": "From the vantage point of the @Space_Station, we will study space weather! Our new mission will help scientists und… https://t.co/W0zg6dDaqX",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "Space_Station",
+            "name": "Intl. Space Station",
+            "id": 1451773004,
+            "id_str": "1451773004",
+            "indices": [
+              30,
+              44
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/W0zg6dDaqX",
+            "expanded_url": "https://twitter.com/i/web/status/1100175223633166336",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 764,
+      "favorite_count": 3985,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 16:32:14 +0000 2019",
+      "id": 1100070980926484500,
+      "id_str": "1100070980926484480",
+      "text": "Introducing #NASAScience Live! We're premiering a new monthly tv series that allows you to interact with our expert… https://t.co/U4eKFWgu34",
+      "truncated": true,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "NASAScience",
+            "indices": [
+              12,
+              24
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/U4eKFWgu34",
+            "expanded_url": "https://twitter.com/i/web/status/1100070980926484480",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 585,
+      "favorite_count": 2747,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 02:19:01 +0000 2019",
+      "id": 1099856260382556200,
+      "id_str": "1099856260382556160",
+      "text": "Sat., March 2, 2:48am ET ⏰: Set your alarm &amp; don't miss liftoff of the first @Commercial_Crew flight test by… https://t.co/MEit2YIhfA",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "Commercial_Crew",
+            "name": "NASA Commercial Crew",
+            "id": 376819015,
+            "id_str": "376819015",
+            "indices": [
+              81,
+              97
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/MEit2YIhfA",
+            "expanded_url": "https://twitter.com/i/web/status/1099856260382556160",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              114,
+              137
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 1099,
+      "favorite_count": 4614,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Sun Feb 24 18:00:00 +0000 2019",
+      "id": 1099730680890773500,
+      "id_str": "1099730680890773504",
+      "text": "NASA officially renamed a facility after Katherine Johnson, the African-American mathematician and centenarian whos… https://t.co/ATDW3xiiAv",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/ATDW3xiiAv",
+            "expanded_url": "https://twitter.com/i/web/status/1099730680890773504",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 32871086,
+        "id_str": "32871086",
+        "name": "Kyle Griffin",
+        "screen_name": "kylegriffin1",
+        "location": "Manhattan, NY",
+        "description": "Producer. MSNBC's @TheLastWord. Opinions mine. Do not congratulate.",
+        "url": "https://t.co/lgyZmnczMB",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/lgyZmnczMB",
+                "expanded_url": "https://www.instagram.com/griffinkyle/",
+                "display_url": "instagram.com/griffinkyle/",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 544409,
+        "friends_count": 981,
+        "listed_count": 6684,
+        "created_at": "Sat Apr 18 12:45:48 +0000 2009",
+        "favourites_count": 38775,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 46789,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/961462238732275712/omWV1cZs_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/961462238732275712/omWV1cZs_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/32871086/1455243585",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 2098,
+      "favorite_count": 7538,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 00:06:01 +0000 2019",
+      "id": 1099822789702357000,
+      "id_str": "1099822789702357001",
+      "text": "Immerse yourself in this nail-biting vintage footage, as we celebrate the #Apollo50th anniversary of Apollo 11. Go… https://t.co/yF5zdQkqa3",
+      "truncated": true,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "Apollo50th",
+            "indices": [
+              74,
+              85
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/yF5zdQkqa3",
+            "expanded_url": "https://twitter.com/i/web/status/1099822789702357001",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              116,
+              139
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 959,
+      "favorite_count": 4535,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 15:32:25 +0000 2019",
+      "id": 1100055926118199300,
+      "id_str": "1100055926118199296",
+      "text": "A truly harrowing incident, but we had a tremendous outcome thanks to an amazing team. #NASA #Apollo11 https://t.co/9xo6RDkgZA",
+      "truncated": false,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "NASA",
+            "indices": [
+              87,
+              92
+            ]
+          },
+          {
+            "text": "Apollo11",
+            "indices": [
+              93,
+              102
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/9xo6RDkgZA",
+            "expanded_url": "https://twitter.com/NASA/status/1099822789702357001",
+            "display_url": "twitter.com/NASA/status/10…",
+            "indices": [
+              103,
+              126
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 46220856,
+        "id_str": "46220856",
+        "name": "Buzz Aldrin",
+        "screen_name": "TheRealBuzz",
+        "location": "",
+        "description": "Celebrating 50 Yrs of Apollo @ https://t.co/gQ1LEQGomg; Gemini 12 & Apollo XI Astronaut & Moonwalker; West Point; USAF Col, Korean War Vet; MIT Founder",
+        "url": "https://t.co/jluLSGHjKJ",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/jluLSGHjKJ",
+                "expanded_url": "http://www.buzzaldrinventures.com",
+                "display_url": "buzzaldrinventures.com",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "https://t.co/gQ1LEQGomg",
+                "expanded_url": "http://RoadtoApollo50th.com",
+                "display_url": "RoadtoApollo50th.com",
+                "indices": [
+                  31,
+                  54
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 1374040,
+        "friends_count": 369,
+        "listed_count": 8824,
+        "created_at": "Wed Jun 10 20:45:09 +0000 2009",
+        "favourites_count": 3345,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "verified": true,
+        "statuses_count": 2887,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme4/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme4/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1009048001740828673/6x8eBb-v_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1009048001740828673/6x8eBb-v_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/46220856/1532194365",
+        "profile_link_color": "F15B2A",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "FFFFFF",
+        "profile_text_color": "18171A",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": true,
+      "quoted_status_id": 1099822789702357000,
+      "quoted_status_id_str": "1099822789702357001",
+      "quoted_status": {
+        "created_at": "Mon Feb 25 00:06:01 +0000 2019",
+        "id": 1099822789702357000,
+        "id_str": "1099822789702357001",
+        "text": "Immerse yourself in this nail-biting vintage footage, as we celebrate the #Apollo50th anniversary of Apollo 11. Go… https://t.co/yF5zdQkqa3",
+        "truncated": true,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "Apollo50th",
+              "indices": [
+                74,
+                85
+              ]
+            }
+          ],
+          "symbols": [],
+          "user_mentions": [],
+          "urls": [
+            {
+              "url": "https://t.co/yF5zdQkqa3",
+              "expanded_url": "https://twitter.com/i/web/status/1099822789702357001",
+              "display_url": "twitter.com/i/web/status/1…",
+              "indices": [
+                116,
+                139
+              ]
+            }
+          ]
+        },
+        "metadata": {
+          "result_type": "popular",
+          "iso_language_code": "en"
+        },
+        "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 11348282,
+          "id_str": "11348282",
+          "name": "NASA",
+          "screen_name": "NASA",
+          "location": "",
+          "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+          "url": "https://t.co/TcEE6NS8nD",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "https://t.co/TcEE6NS8nD",
+                  "expanded_url": "http://www.nasa.gov",
+                  "display_url": "nasa.gov",
+                  "indices": [
+                    0,
+                    23
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": []
+            }
+          },
+          "protected": false,
+          "followers_count": 30402368,
+          "friends_count": 297,
+          "listed_count": 93536,
+          "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+          "favourites_count": 4984,
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "verified": true,
+          "statuses_count": 54911,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "is_translation_enabled": false,
+          "profile_background_color": "000000",
+          "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+          "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+          "profile_link_color": "205BA7",
+          "profile_sidebar_border_color": "000000",
+          "profile_sidebar_fill_color": "F3F2F2",
+          "profile_text_color": "000000",
+          "profile_use_background_image": true,
+          "has_extended_profile": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false,
+          "translator_type": "regular"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 959,
+        "favorite_count": 4535,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 185,
+      "favorite_count": 1152,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 10:16:59 +0000 2019",
+      "id": 1099976544548782100,
+      "id_str": "1099976544548782080",
+      "text": "Iglesias Villanueva recurrió al telescopio NuSTAR de la NASA para pitar el penalti a Casemiro… https://t.co/qgUGL1NPSQ",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/qgUGL1NPSQ",
+            "expanded_url": "https://twitter.com/i/web/status/1099976544548782080",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              95,
+              118
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "es"
+      },
+      "source": "<a href=\"https://buffer.com\" rel=\"nofollow\">Buffer</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 38381308,
+        "id_str": "38381308",
+        "name": "El Mundo Today",
+        "screen_name": "elmundotoday",
+        "location": "España",
+        "description": "La actualidad del mañana.",
+        "url": "http://t.co/25rKDbkiG9",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/25rKDbkiG9",
+                "expanded_url": "http://www.elmundotoday.com",
+                "display_url": "elmundotoday.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 1254158,
+        "friends_count": 464,
+        "listed_count": 7767,
+        "created_at": "Thu May 07 05:59:57 +0000 2009",
+        "favourites_count": 2888,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "verified": true,
+        "statuses_count": 33988,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "EEEEEE",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1092359607241052160/y3eCkjuD_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1092359607241052160/y3eCkjuD_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/38381308/1547460724",
+        "profile_link_color": "EA861F",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "E0E0E0",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 226,
+      "favorite_count": 539,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    {
+      "created_at": "Sun Feb 24 20:13:00 +0000 2019",
+      "id": 1099764150933340200,
+      "id_str": "1099764150933340163",
+      "text": "Cracking across Antarctica’s Brunt Ice Shelf is set to release an iceberg w/ an area about 2x the size of NYC. The… https://t.co/PjlPBR42ck",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/PjlPBR42ck",
+            "expanded_url": "https://twitter.com/i/web/status/1099764150933340163",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              116,
+              139
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 1803,
+      "favorite_count": 3273,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "created_at": "Mon Feb 25 19:27:01 +0000 2019",
+      "id": 1100114965732778000,
+      "id_str": "1100114965732777984",
+      "text": "Mission complete! ✅ Following its primary mission to deliver more than 7,400 pounds of @ISS_Research &amp; supplies to… https://t.co/nNQe1WRCdO",
+      "truncated": true,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "ISS_Research",
+            "name": "ISS Research",
+            "id": 189253902,
+            "id_str": "189253902",
+            "indices": [
+              87,
+              100
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/nNQe1WRCdO",
+            "expanded_url": "https://twitter.com/i/web/status/1100114965732777984",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [
+              120,
+              143
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "result_type": "popular",
+        "iso_language_code": "en"
+      },
+      "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 11348282,
+        "id_str": "11348282",
+        "name": "NASA",
+        "screen_name": "NASA",
+        "location": "",
+        "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+        "url": "https://t.co/TcEE6NS8nD",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/TcEE6NS8nD",
+                "expanded_url": "http://www.nasa.gov",
+                "display_url": "nasa.gov",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30402368,
+        "friends_count": 297,
+        "listed_count": 93536,
+        "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+        "favourites_count": 4984,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 54911,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1549909744",
+        "profile_link_color": "205BA7",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "F3F2F2",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "regular"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 411,
+      "favorite_count": 2545,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    }
+  ],
+  "search_metadata": {
+    "completed_in": 0.06,
+    "max_id": 0,
+    "max_id_str": "0",
+    "next_results": "?max_id=1099730680890773503&q=nasa&include_entities=1&result_type=popular",
+    "query": "nasa",
+    "count": 15,
+    "since_id": 0,
+    "since_id_str": "0"
+  }
+}
