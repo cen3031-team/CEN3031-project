@@ -6,9 +6,9 @@ var listings = require('../controllers/listings.server.controller.js'),
 /*
   These method calls are responsible for routing requests to the correct request handler.
 */
-router.route('/')
-  .get(listings.list)
-  .post(listings.create);
+// router.route('/')
+//   .get(listings.list)
+//   .post(listings.create);
 
 
 /*

@@ -5,6 +5,9 @@
   "main": "server.js",
   "author": "Zeeshan Habib, Katie Syron, Jonathan Lai, Sean O'reilly",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon server"
+  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "btoa": "^1.2.1",
