@@ -1,11 +1,13 @@
 angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
   function ($scope, Trends) {
-    // /* Get all the listings, then bind it to the scope */
-    // Listings.getAll().then(function (response) {
-    //   $scope.listings = response.data;
-    // }, function (error) {
-    //   console.log('Unable to retrieve listings:', error);
-    // });
+    /* Get all the trends, then bind it to the scope */
+    Trends.getAll().then(function (response) {
+      $scope.trendsArr = response.data.trends;
+      $scope.location = response.data.locations[0].name;
+      // console.log($scope.trends);
+    }, function (error) {
+      console.log('Unable to retrieve listings:', error);
+    });
 
     // $scope.detailedInfo = undefined;
 

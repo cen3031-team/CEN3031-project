@@ -22,7 +22,7 @@
       <button class="btn btn-outline-info my-2 my-sm-0" type="button"><i class="fas fa-user"></i> Profile</button>
     </form>
   </nav>
-  <div ng-controller="TweeterController" class="container-fluid">
+  <div ng-controller="TrendsController" class="container-fluid">
     <div class="row main-container">
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
@@ -40,30 +40,12 @@
       </div>
       <!-- Container for Trends and Topics -->
       <div class="col-9 col-lg-10">
-        <h3 class="subheading">Topics Trending <i class="fas fa-chart-line"></i></h3>
+        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
 
         <div class="display-container">
-          <div class="trendCard">
-            #fusball
-          </div>
-
-          <div class="card trendCard">
-            #dummytrend
-          </div>
-          <div class="card trendCard">
-            #dummytrend
-          </div>
-          <div class="card trendCard">
-            #dummytrend
-          </div>
-          <div class="card trendCard">
-            #dummytrend
-          </div>
-          <div class="card trendCard">
-            #dummytrend
-          </div>
-          <div class="card trendCard">
-            #dummytrend
+          <!-- Repeat Trend topics for each trend in array -->
+          <div ng-repeat="trend in trendsArr" class="trendCard">
+            {{trend.name}}
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     request = require('request'),
-    listingsRouter = require('../routes/listings.server.routes');
+    trendsRouter = require('../routes/trends.server.routes');
 
 module.exports.init = function() {
   //connect to database
@@ -35,7 +35,7 @@ module.exports.init = function() {
   //     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
   //   },
   //   body: 'grant_type=client_credentials'
-  // }
+  // // }
 
   // request(reqOptions, (error, response, body) => {
   //   if (error) console.log(error);
@@ -45,7 +45,7 @@ module.exports.init = function() {
 
   /**
   Use the listings router for requests to the api */
-  app.use('/api/listings', listingsRouter);
+  app.use('/api/trends', trendsRouter);
 
   /**
   Go to homepage for all routes not specified */ 

@@ -1,5 +1,7 @@
 angular.module('trends', []).factory('Trends', function($http) {
+
   var methods = {
+    // Returns All Global Trends
     getAll: function() {
       return $http.get('/api/trends');
     },

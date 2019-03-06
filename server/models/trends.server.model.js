@@ -2,27 +2,25 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Schema definition */
-var listingSchema = new Schema({
+var trendsSchema = new Schema({
   name: {
-    type: String,
-    required: true
-  },
-  code: {
     type: String,
     required: true,
     unique: true
   },
-  address: String,
-  coordinates: {
-    latitude: Number,
-    longitude: Number
+  url: {
+    type: String,
+    required: true,
+    unique: true
   },
+  query: String,
+  tweet_volume: Number,
   created_at: Date,
   updated_at: Date
 });
 
 /*'pre' function that adds the updated_at (and created_at if not already there) property */
-listingSchema.pre('save', function(next) {
+trendsSchema.pre('save', function(next) {
   var currentTime = new Date;
   this.updated_at = currentTime;
   if(!this.created_at)
@@ -33,7 +31,7 @@ listingSchema.pre('save', function(next) {
 });
 
 /* Instantiate mongoose model using schema */
-var Listing = mongoose.model('Listing', listingSchema);
+var Trend = mongoose.model('Trend', trendsSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
-module.exports = Listing;
+module.exports = Trend;
