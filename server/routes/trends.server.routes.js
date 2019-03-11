@@ -1,5 +1,5 @@
 /* Dependencies */
-var listings = require('../controllers/listings.server.controller.js'),
+var trends = require('../controllers/trends.server.controller.js'),
     express = require('express'),
     router = express.Router();
 
@@ -7,18 +7,15 @@ var listings = require('../controllers/listings.server.controller.js'),
   These method calls are responsible for routing requests to the correct request handler.
 */
 router.route('/')
-  .get(listings.list)
-  .post(listings.create);
+  .get(trends.list);
 
 
 /*
   The ':' specifies a URL parameter. 
  */
-router.route('/:listingId')
-  .get(listings.read)
-  .put(listings.update)
-  .delete(listings.delete);
+router.route('/:trendId')
+  .get(trends.read);
 
-router.param('listingId', listings.listingByID);
+// router.param('listingId', trends.listingByID);
 
 module.exports = router;

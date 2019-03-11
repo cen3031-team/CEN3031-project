@@ -1,8 +1,56 @@
-#searchBar {
-  margin: 15px 10px;
+body {
+  font-family: 'Nunito', sans-serif;
 }
 
-.tableWrapper {
-  max-height: 400px;
-  overflow: auto;
+.main-container {
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+}
+
+.sidebar {
+  background-color: #ecf0f1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.display-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding: 2rem;
+}
+
+.trendCard {
+  border: 3px;
+  border-style: dashed;
+  border-color: cadetblue;
+  border-radius: 5%;
+  background-color: aliceblue;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  /* font-weight: bold; */
+  color: grey;
+}
+
+.trendCard:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.subheading {
+  margin: 50px 10px 5px 35px;
+}
+
+.filter-container {
+  margin-top: 50px;
 }

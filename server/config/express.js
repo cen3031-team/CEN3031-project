@@ -4,11 +4,14 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    listingsRouter = require('../routes/listings.server.routes');
+    request = require('request'),
+    trendsRouter = require('../routes/trends.server.routes');
 
 module.exports.init = function() {
   //connect to database
-  mongoose.connect(config.db.uri);
+  mongoose.connect(config.db.uri, {
+    useMongoClient: true
+  });
 
   //initialize app
   var app = express();
@@ -18,15 +21,31 @@ module.exports.init = function() {
 
   //body parsing middleware 
   app.use(bodyParser.json());
-
   
   /**
   Serve static files */
   app.use(express.static('client'));
 
+  // // Get Bearer Token from Twitter API
+  // const reqOptions = {
+  //   method: 'POST',
+  //   url: 'https://api.twitter.com/oauth2/token',
+  //   headers: {
+  //     'Authorization': config.authToken,
+  //     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+  //   },
+  //   body: 'grant_type=client_credentials'
+  // // }
+
+  // request(reqOptions, (error, response, body) => {
+  //   if (error) console.log(error);
+  //   console.log(body);
+  //   config.bearerToken = JSON.parse(body)["access_token"];
+  // });
+
   /**
   Use the listings router for requests to the api */
-  app.use('/api/listings', listingsRouter);
+  app.use('/api/trends', trendsRouter);
 
   /**
   Go to homepage for all routes not specified */ 
