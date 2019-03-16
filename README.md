@@ -34,8 +34,8 @@ Request body:
     user: {
         username: 'username_here',
         password: 'password_here',
-        first_name: 'user's first name',
-        last_name: 'user's last name'
+        first_name: 'user first name',
+        last_name: 'user last name'
     } 
     
 Returns:
@@ -43,7 +43,7 @@ Returns:
   password: 'userPass',
   first_name: 'userFirst',
   last_name: 'userLast',
-  _id: 5c8d4a71ae4b4921f0408e8c }
+  _id: '5c8d4a71ae4b4921f0408e8c' }
 ```
 
 # Frontend Controller
