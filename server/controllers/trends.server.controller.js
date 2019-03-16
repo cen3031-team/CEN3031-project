@@ -20,6 +20,7 @@ exports.list = function(req, res) {
   request(reqOptions, (error, response, body) => {
     if (error) console.log(error);
     const trendArr = JSON.parse(body)[0];
+    console.log(trendArr);
     res.json(trendArr);
   });
 
