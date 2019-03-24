@@ -36,6 +36,16 @@ exports.updateUser = (req, res) => {
   });
 }
 
+// Delete User
+exports.deleteUser = (req, res) => {
+  const delUser = req.params.username;
+  if (!delUser) res.status(404).send('User not found');
+  User.findOneAndRemove({username: delUser}, (err, user) => {
+    if (err) res.status(400).send(err);
+    res.json(user);
+  });
+}
+
 // Middleware: Get User by ID
 exports.getUserById = (req, res, next ,id) => {
   User.findById(id, (err, user) => {
