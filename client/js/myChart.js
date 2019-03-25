@@ -27,17 +27,12 @@ var labels = [
 var data = [
     70,
     30,
-    20,
+   
 ];
 
-var label =[];
-var volume= [];
-for(var i in trends) {
-        label.push(trends[i].name);
-        volume.push(trends[i].tweet_volume);
-      }
 
-console.log(trends);
+
+
 
 var pie = document.getElementById("pieChart").getContext('2d');
 var myChart = new Chart(pie, {
