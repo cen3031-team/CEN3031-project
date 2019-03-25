@@ -9,6 +9,17 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       console.log('Unable to retrieve listings:', error);
     });
 
+    // Create new user
+    $scope.createUser = function() {
+        $scope.user =
+          {
+	    first_name: $scope.newuser.first,
+	    last_name: $scope.newuser.last,
+	    username: $scope.newuser.username,
+	    password: $scope.newuser.password
+          };
+    };
+
     // $scope.detailedInfo = undefined;
 
     // $scope.addListing = function () {

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+
+    <title> Signup Form </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css"> 
+  </head>
+
+  <body ng-app="tweeterTrends">
+    <br>
+    <br>
+    <br>
+    <div ng-controller="TrendsController" class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-mid-6 main">
+          <form action="/sign_up" method="post">
+            <h1>Signup Form</h1>
+            <input class="box" type="text" name="firstName" id="firstName" placeholder="First Name" ng-model="newuser.first" required /><br>
+	    <input class="box" type="text" name="lastName" id="lastName" placeholder="Last Name" ng-model="newuser.last" required /><br>
+            <input class="box" type="text" name="username" id="username" placeholder="Username" ng-model="newuser.username" required /><br>
+	    <input class="box" type="password" name="password" id="password" placeholder="Password" ng-model="newuser.password" required /><br>
+	    <br>
+	    <input type="submit" name="submitDetails" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
+	  </form>
+	</div>
+	<div class="cold-md-3">
+	</div>
+      </div>
+    </div>
+  </body>
+
+</html>

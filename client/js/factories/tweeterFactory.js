@@ -5,7 +5,11 @@ angular.module('trends', []).factory('Trends', function($http) {
     getAll: function() {
       return $http.get('/api/trends');
     },
-	
+
+    // Creates New User
+    createUser: function(user) {
+      return $http.post('/api/user', user);
+    },
 	// create: function(listing) {
 	//   return $http.post('/api/listings', listing);
   //   }, 
