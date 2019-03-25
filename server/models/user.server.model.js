@@ -24,8 +24,8 @@ const userSchema = new Schema({
   updated_at: Date
 });
 
-userSchema.pre('save', (next) => {
-  const currentTime = new Date();
+userSchema.pre('save', function(next) {
+  const currentTime = new Date().toISOString();
   this.updated_at = currentTime;
   if (this.created_at == null)
   {

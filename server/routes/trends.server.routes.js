@@ -16,6 +16,5 @@ router.route('/')
 router.route('/:trendId')
   .get(trends.read);
 
-// router.param('listingId', trends.listingByID);
 
 module.exports = router;
