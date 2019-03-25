@@ -39,16 +39,26 @@
         </div>
       </div>
       <!-- Container for Trends and Topics -->
-      <div class="col-9 col-lg-10">
+      <div class="col-9 col-lg-9">
         <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
-
-        <div class="display-container">
+          <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('trends','trendsData')">See Data {{location}}</a></button>
+        <div id="trends" class="container" >
+           
           <!-- Repeat Trend topics for each trend in array -->
           <div ng-repeat="trend in trendsArr" class="trendCard">
             {{trend.name}}
           </div>
+             
         </div>
+          <div id = "trendsData" class ="display-container" style="display: none">
+             <canvas id="pieChart"></canvas>
+   
+
+
+          
+          </div>
       </div>
+        
     </div>
   </div>
   <!-- Optional JavaScript -->
@@ -65,6 +75,29 @@
   <script src="js/app.js"></script>
   <script src="js/factories/tweeterFactory.js"></script>
   <script src="js/controllers/tweeterController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="./js/myChart.js"></script>
+    <script type="text/javascript">
+function SwapDivsWithClick(div1,div2)
+{
+   d1 = document.getElementById(div1);
+   d2 = document.getElementById(div2);
+   if( d2.style.display == "none" )
+   {
+      d1.style.display = "none";
+      d2.style.display = "block";
+   }
+   else
+   {
+      d1.style.display = "block";
+      d2.style.display = "none";
+   }
+}
+</script>
+
+
+    
 </body>
 
 </html>
