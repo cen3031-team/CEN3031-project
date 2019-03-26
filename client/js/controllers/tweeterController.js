@@ -9,15 +9,28 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       console.log('Unable to retrieve listings:', error);
     });
 
+    $scope.user =
+        {
+          first_name: "",
+          last_name: "",
+          username: "",
+          password: "",
+          id: null
+        };
     // Create new user
     $scope.createUser = function() {
-        $scope.user =
-          {
-	    first_name: $scope.newuser.first,
-	    last_name: $scope.newuser.last,
-	    username: $scope.newuser.username,
-	    password: $scope.newuser.password
-          };
+      console.log($scope.user.first_name);
+      console.log($scope.user.last_name);
+      console.log($scope.user.username);
+      console.log($scope.user.password);
+	    
+      Trends.createUser($scope.user).then(function (response) 
+      {
+        console.log(response);
+      }, function(error) 
+      {
+          console.log('Unable to create user:', error);
+      });
     };
 
     // $scope.detailedInfo = undefined;
