@@ -33,7 +33,7 @@
                 <option value="1">US</option>
                 <option value="2">UK</option>
                 <option value="3">Canada</option>
-                <option value="4">Austrailia</option>
+                <option value="4">Australia</option>
 
               </select>
         </div>
@@ -47,6 +47,23 @@
           <div ng-repeat="trend in trendsArr" class="trendCard">
             {{trend.name}}
           </div>
+          
+          <!-- SIGNUP FORM -->
+          <form>
+            <h1>Signup Form</h1>
+            <input class="box" type="text" id="firstName" placeholder="First Name"
+              ng-model="user.first_name" required /><br>
+            <input class="box" type="text" id="lastName" placeholder="Last Name" ng-model="user.last_name"
+              required /><br>
+            <input class="box" type="text" id="username" placeholder="Username" ng-model="user.username"
+              required /><br>
+            <input class="box" type="password" id="password" placeholder="Password"
+              ng-model="user.password" required /><br>
+            <br>
+            <input type="button" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
+          </form>
+          
+          
         </div>
       </div>
     </div>
