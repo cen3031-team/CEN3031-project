@@ -103,6 +103,24 @@
         </div>
       </div>
       <!-- Container for Trends and Topics -->
+      
+      <!--<div class="col-9 col-lg-9"id = "TopTweets" style="display:none">
+          <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending Tweets</h3>
+          <div class="container" >
+              <div ng-repeat=" in " class="trendCard">
+           
+                  
+                  
+                </div>
+      </div>
+    </div>-->
+      <div class="col-9 col-lg-9"id = "Trending">
+        <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending {{location}}</h3>
+          <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('trends','trendsData')">See Data {{location}}</a></button>
+          <!--<button type="button" class="btn btn-light">Test</button>-->
+        <div id="trends" class="container" >
+           
+           
       <div class="col-9 col-lg-10">
         <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
 
