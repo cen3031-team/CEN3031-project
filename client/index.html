@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -24,19 +24,56 @@
   </nav>
   <div ng-controller="TrendsController" class="container-fluid">
 
-    <div class="row main-container">
+    <div ng-if="!user.id">
+      <div ng-if="showSignupForm">
+        <!-- SIGNUP FORM -->
+        <form>
+          <h1>Signup Form</h1>
+          <input class="box" type="text" id="firstName" placeholder="First Name" ng-model="user.first_name"
+            required /><br>
+          <input class="box" type="text" id="lastName" placeholder="Last Name" ng-model="user.last_name" required /><br>
+          <input class="box" type="text" id="username" placeholder="Username" ng-model="user.username" required /><br>
+          <input class="box" type="password" id="password" placeholder="Password" ng-model="user.password"
+            required /><br>
+          <br>
+          <input type="button" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
+        </form>
+        <!--------------->
+      </div>
+
+      <!-- Login Form -->
+      <div class="container login-form" ng-if="showLoginForm">
+        <h1 class="text-center" style="margin-bottom: 20px;">Login</h1>
+        <form>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="rob@email.com">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="*****">
+            </div>
+            <button ng-click="login()" type="submit" class="btn btn-primary">Submit</button>
+            <button ng-click="toggleSignupView()" type="button" class="btn btn-outline-info">Create Account</button>
+          </form>
+      </div>
+      <!-- ---------- -->
+
+    </div>
+
+    <div ng-if="user.id" class="row main-container">
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
         <div class="filter-container">
-            <h6>Narrow By Location</h6>
-            <select class="custom-select">
-                <option selected>Select Country</option>
-                <option value="1">US</option>
-                <option value="2">UK</option>
-                <option value="3">Canada</option>
-                <option value="4">Australia</option>
+          <h6>Narrow By Location</h6>
+          <select class="custom-select">
+            <option selected>Select Country</option>
+            <option value="1">US</option>
+            <option value="2">UK</option>
+            <option value="3">Canada</option>
+            <option value="4">Australia</option>
 
-              </select>
+          </select>
         </div>
       </div>
       <!-- Container for Trends and Topics -->
@@ -48,35 +85,21 @@
           <div ng-repeat="trend in trendsArr" class="trendCard">
             {{trend.name}}
           </div>
-          
-          <!-- SIGNUP FORM -->
-          <form>
-            <h1>Signup Form</h1>
-            <input class="box" type="text" id="firstName" placeholder="First Name"
-              ng-model="user.first_name" required /><br>
-            <input class="box" type="text" id="lastName" placeholder="Last Name" ng-model="user.last_name"
-              required /><br>
-            <input class="box" type="text" id="username" placeholder="Username" ng-model="user.username"
-              required /><br>
-            <input class="box" type="password" id="password" placeholder="Password"
-              ng-model="user.password" required /><br>
-            <br>
-            <input type="button" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
-          </form>
-          
-          
         </div>
       </div>
     </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
 
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>

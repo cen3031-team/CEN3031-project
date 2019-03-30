@@ -1,26 +1,26 @@
-angular.module('trends', []).factory('Trends', function($http) {
+angular.module('trends', []).factory('Trends', function ($http) {
 
   var methods = {
     // Returns All Global Trends
-    getAll: function() {
+    getAll: function () {
       return $http.get('/api/trends');
     },
 
     // Creates New User
-    createUser: function(user) {
+    createUser: function (user) {
       return $http.post('/api/user', user);
     },
-	// create: function(listing) {
-	//   return $http.post('/api/listings', listing);
-  //   }, 
+    // create: function(listing) {
+    //   return $http.post('/api/listings', listing);
+    //   }, 
 
-  //   delete: function(id) {
-	//    /**
-  //       return result of HTTP delete method
-  //      */
-  //     return $http.delete('/api/listings/' + id);
+    //   delete: function(id) {
+    //    /**
+    //       return result of HTTP delete method
+    //      */
+    //     return $http.delete('/api/listings/' + id);
 
-  //   }
+    //   }
   };
 
   return methods;
