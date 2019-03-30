@@ -16,8 +16,26 @@ var data = [
    
 ];*/
 
-var labels = [trendsArr.name];
-var data = [trendsArr.tweet_volume];
+
+function random_rgba() {
+  var o = Math.round, r = Math.random, s = 255;
+  return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+var data= [];
+var labels = [];
+var color = [];
+for (var i = 0; i < trendsArr.length; i++) {
+  console.log(trendsArr[i].name + trendsArr[i].tweet_volume);
+ // if(trendsArr.tweet_volume[i] == null){
+labels.push(trendsArr[i].name);
+data.push(trendsArr[i].tweet_volume);
+color.push(random_rgba());
+//}
+  //}
+}
+/*var labels = [trendsArr[1].name];
+var data = [trendsArr[1].tweet_volume];*/
 
 var pie = document.getElementById("pieChart").getContext('2d');
 var myChart = new Chart(pie, {
@@ -28,7 +46,7 @@ var myChart = new Chart(pie, {
             {
                 data: data,
                 borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor:'rgba(75, 192, 192, 0.2)',
+                backgroundColor:color,
             }
         ]
     },
