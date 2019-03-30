@@ -11,6 +11,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       console.log('Unable to retrieve listings:', error);
     });
 
+
      /* $scope.showData = function(trendsArr){
           $scope.labels = [
     "Vote for me",
@@ -41,6 +42,31 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     }
 });
   }*/
+
+    $scope.user =
+        {
+          first_name: "",
+          last_name: "",
+          username: "",
+          password: "",
+          id: null
+        };
+    // Create new user
+    $scope.createUser = function() {
+	    
+      Trends.createUser($scope.user).then(function (response) 
+      {
+        $scope.user.first_name = response.data.first_name;
+        $scope.user.last_name = response.data.last_name;
+        $scope.user.username = response.data.username;
+        $scope.user.id = response.data._id;
+      }, function(error) 
+      {
+          console.log('Unable to create user:', error);
+      });
+    };
+
+
     // $scope.detailedInfo = undefined;
 
     // $scope.addListing = function () {
