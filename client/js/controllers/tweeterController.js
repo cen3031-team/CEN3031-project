@@ -3,11 +3,14 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     /* Get all the trends, then bind it to the scope */
     Trends.getAll().then(function (response) {
       $scope.trendsArr = response.data.trends;
+    //    $scope.showData(response.data.trends);
+        Trends.renderPieChart($scope.trendsArr);
       $scope.location = response.data.locations[0].name;
       // console.log($scope.trends);
     }, function (error) {
       console.log('Unable to retrieve listings:', error);
     });
+
 
     $scope.user =
         {
@@ -31,6 +34,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           console.log('Unable to create user:', error);
       });
     };
+
 
     // $scope.detailedInfo = undefined;
 
