@@ -23,6 +23,7 @@
     </form>
   </nav>
   <div ng-controller="TrendsController" class="container-fluid">
+
     <div class="row main-container">
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
@@ -33,7 +34,7 @@
                 <option value="1">US</option>
                 <option value="2">UK</option>
                 <option value="3">Canada</option>
-                <option value="4">Austrailia</option>
+                <option value="4">Australia</option>
 
               </select>
         </div>
@@ -53,8 +54,25 @@
             {{trend.name}}
             
           </div>
-        
-             
+
+          
+          <!-- SIGNUP FORM -->
+          <form>
+            <h1>Signup Form</h1>
+            <input class="box" type="text" id="firstName" placeholder="First Name"
+              ng-model="user.first_name" required /><br>
+            <input class="box" type="text" id="lastName" placeholder="Last Name" ng-model="user.last_name"
+              required /><br>
+            <input class="box" type="text" id="username" placeholder="Username" ng-model="user.username"
+              required /><br>
+            <input class="box" type="password" id="password" placeholder="Password"
+              ng-model="user.password" required /><br>
+            <br>
+            <input type="button" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
+          </form>
+          
+          
+
         </div>
           <div id = "trendsData" class ="display-container" style="display: none">
               <button type="button" class="btn btn-light" onclick="toggle(this)"><a href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar</a></button>

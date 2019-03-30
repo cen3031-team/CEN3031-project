@@ -11,36 +11,31 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       console.log('Unable to retrieve listings:', error);
     });
 
-     /* $scope.showData = function(trendsArr){
-          $scope.labels = [
-    "Vote for me",
-    "vote for red",
-];
-/*$scope.data = [
-    70,
-    30,
-];*/
-         /*$scope.pie = document.getElementById("pieChart").getContext('2d');
-          $scope.myChart = new Chart(pie, {
-    type: 'pie',
-    data: {
-        labels: labels,
-        datasets: [
-            {
-                data: data,
-                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(192, 0, 0, 1)'],
-                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(192, 0, 0, 0.2)'],
-            }
-        ]
-    },
-    options: {
-        title: {
-            display: true,
-            text: "Colors election"
-        }
-    }
-});
-  }*/
+
+    $scope.user =
+        {
+          first_name: "",
+          last_name: "",
+          username: "",
+          password: "",
+          id: null
+        };
+    // Create new user
+    $scope.createUser = function() {
+	    
+      Trends.createUser($scope.user).then(function (response) 
+      {
+        $scope.user.first_name = response.data.first_name;
+        $scope.user.last_name = response.data.last_name;
+        $scope.user.username = response.data.username;
+        $scope.user.id = response.data._id;
+      }, function(error) 
+      {
+          console.log('Unable to create user:', error);
+      });
+    };
+
+
     // $scope.detailedInfo = undefined;
 
     // $scope.addListing = function () {
