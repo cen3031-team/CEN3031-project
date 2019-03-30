@@ -57,6 +57,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 	    
       Trends.createUser($scope.user).then(function (response) 
       {
+        
         $scope.user.first_name = response.data.first_name;
         $scope.user.last_name = response.data.last_name;
         $scope.user.username = response.data.username;
@@ -66,7 +67,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           console.log('Unable to create user:', error);
       });
     };
-
 
     // $scope.detailedInfo = undefined;
 

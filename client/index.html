@@ -28,6 +28,7 @@
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
         <div class="filter-container">
+            <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('Trending','TopTweets')">See Top Tweets</a></button>
             <h6>Narrow By Location</h6>
             <select class="custom-select">
                 <option selected>Select Country</option>
@@ -40,8 +41,19 @@
         </div>
       </div>
       <!-- Container for Trends and Topics -->
-      <div class="col-9 col-lg-9">
-        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
+      
+      <!--<div class="col-9 col-lg-9"id = "TopTweets" style="display:none">
+          <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending Tweets</h3>
+          <div class="container" >
+              <div ng-repeat=" in " class="trendCard">
+           
+                  
+                  
+                </div>
+      </div>
+    </div>-->
+      <div class="col-9 col-lg-9"id = "Trending">
+        <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending {{location}}</h3>
           <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('trends','trendsData')">See Data {{location}}</a></button>
           <!--<button type="button" class="btn btn-light">Test</button>-->
         <div id="trends" class="container" >
