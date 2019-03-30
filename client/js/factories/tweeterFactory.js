@@ -6,7 +6,7 @@ angular.module('trends', []).factory('Trends', function($http) {
       return $http.get('/api/trends');
     },
 
-    
+
       renderPieChart: function(trendsArr){
         /*  var labels = [
     "Vote for blue",
@@ -104,7 +104,7 @@ var myBarChart = new Chart(bar, {
 	
 
     
-    // Creates New User
+
     createUser: function(user) {
       console.log(user.username);
       return $http.post('/api/user', user);

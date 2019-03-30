@@ -23,50 +23,69 @@
     </form>
   </nav>
   <div ng-controller="TrendsController" class="container-fluid">
+
     <div class="row main-container">
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
         <div class="filter-container">
-            <h6>Narrow By Location</h6>
+            <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('Trending','TopTweets')">See Top Tweets</a></button>
+            <h6>Narrow </h6>
             <select class="custom-select">
                 <option selected>Select Country</option>
                 <option value="1">US</option>
                 <option value="2">UK</option>
                 <option value="3">Canada</option>
-                <option value="4">Austrailia</option>
+                <option value="4">Australia</option>
 
               </select>
         </div>
       </div>
       <!-- Container for Trends and Topics -->
-      <div class="col-9 col-lg-9">
-        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
+      
+      <!--<div class="col-9 col-lg-9"id = "TopTweets" style="display:none">
+          <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending Tweets</h3>
+          <div class="container" >
+              <div ng-repeat=" in " class="trendCard">
+           
+                  
+                  
+                </div>
+      </div>
+    </div>-->
+      <div class="col-9 col-lg-9"id = "Trending">
+        <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending {{location}}</h3>
           <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('trends','trendsData')">See Data {{location}}</a></button>
-          <button type="button" class="btn btn-light">Test</button>
+          <!--<button type="button" class="btn btn-light">Test</button>-->
         <div id="trends" class="container" >
            
            
+      <div class="col-9 col-lg-10">
+        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
+
+        <div class="display-container">
           <!-- Repeat Trend topics for each trend in array -->
-          
-          <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null" >
-           
+          <div ng-repeat="trend in trendsArr" class="trendCard">
             {{trend.name}}
-            
           </div>
-        
-             
-        </div>
-          <div id = "trendsData" class ="display-container" style="display: none">
-              <button type="button" class="btn btn-light" onclick="toggle(this)"><a href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar</a></button>
-             <canvas id="pieChart"></canvas>
-             <canvas id="barChart" style="display:none"></canvas >
-   
-
-
           
-          </div>
+          <!-- SIGNUP FORM -->
+          <form>
+            <h1>Signup Form</h1>
+            <input class="box" type="text" id="firstName" placeholder="First Name"
+              ng-model="user.first_name" required /><br>
+            <input class="box" type="text" id="lastName" placeholder="Last Name" ng-model="user.last_name"
+              required /><br>
+            <input class="box" type="text" id="username" placeholder="Username" ng-model="user.username"
+              required /><br>
+            <input class="box" type="password" id="password" placeholder="Password"
+              ng-model="user.password" required /><br>
+            <br>
+            <input type="button" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
+          </form>
+          
+          
+        </div>
       </div>
-        
     </div>
   </div>
   <!-- Optional JavaScript -->
@@ -83,38 +102,6 @@
   <script src="js/app.js"></script>
   <script src="js/factories/tweeterFactory.js"></script>
   <script src="js/controllers/tweeterController.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="./js/myChart.js"></script>
-    <script type="text/javascript">
-function SwapDivsWithClick(div1,div2)
-{
-   d1 = document.getElementById(div1);
-   d2 = document.getElementById(div2);
-   if( d2.style.display == "none" )
-   {
-      d1.style.display = "none";
-      d2.style.display = "block";
-   }
-   else
-   {
-      d1.style.display = "block";
-      d2.style.display = "none";
-   }
-}
-</script>
-<script type="text/javascript">
-  function toggle (t) {
-  if (t.childNodes[0].innerHTML == "Bar") {
-      t.childNodes[0].innerHTML = "Pie";
-  } else {
-      t.childNodes[0].innerHTML = "Bar";
-  }
-  }
-  </script>
-
-
-    
 </body>
 
 </html>

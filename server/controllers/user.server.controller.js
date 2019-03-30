@@ -3,7 +3,7 @@ const User = require('../models/user.server.model'),
 
 // Create a new user
 exports.createUser = (req, res) => {
-  let newUser = new User(req.body.user);
+  let newUser = new User(req.body);
   newUser.save((err) => {
     if (err) {
       console.log(err);
