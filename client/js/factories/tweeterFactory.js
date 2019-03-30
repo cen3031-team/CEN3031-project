@@ -27,13 +27,15 @@ var labels = [];
 var color = [];
 for (var i = 0; i < trendsArr.length; i++) {
   console.log(trendsArr[i].name + trendsArr[i].tweet_volume);
- // if(trendsArr.tweet_volume[i] == null){
+  if(trendsArr[i].tweet_volume != null){
 labels.push(trendsArr[i].name);
 data.push(trendsArr[i].tweet_volume);
 color.push(random_rgba());
-//}
-  //}
 }
+
+}
+
+
 /*var labels = [trendsArr[1].name];
 var data = [trendsArr[1].tweet_volume];*/
 
@@ -45,7 +47,7 @@ var myChart = new Chart(pie, {
         datasets: [
             {
                 data: data,
-                borderColor: 'rgba(75, 192, 192, 1)',
+                borderColor: 'rgb(211,211,211)',
                 backgroundColor:color,
             }
         ]

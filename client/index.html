@@ -47,9 +47,13 @@
            
            
           <!-- Repeat Trend topics for each trend in array -->
-          <div ng-repeat="trend in trendsArr" class="trendCard">
+          
+          <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null" >
+           
             {{trend.name}}
+            
           </div>
+        
              
         </div>
           <div id = "trendsData" class ="display-container" style="display: none">
