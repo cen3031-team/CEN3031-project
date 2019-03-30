@@ -57,7 +57,9 @@
              
         </div>
           <div id = "trendsData" class ="display-container" style="display: none">
+              <button type="button" class="btn btn-light" onclick="toggle(this)"><a href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar</a></button>
              <canvas id="pieChart"></canvas>
+             <canvas id="barChart" style="display:none"></canvas >
    
 
 
@@ -101,6 +103,15 @@ function SwapDivsWithClick(div1,div2)
    }
 }
 </script>
+<script type="text/javascript">
+  function toggle (t) {
+  if (t.childNodes[0].innerHTML == "Bar") {
+      t.childNodes[0].innerHTML = "Pie";
+  } else {
+      t.childNodes[0].innerHTML = "Bar";
+  }
+  }
+  </script>
 
 
     

@@ -40,6 +40,7 @@ color.push(random_rgba());
 var data = [trendsArr[1].tweet_volume];*/
 
 var pie = document.getElementById("pieChart").getContext('2d');
+var bar = document.getElementById("barChart").getContext('2d');
 var myChart = new Chart(pie, {
     type: 'pie',
     data: {
@@ -53,12 +54,50 @@ var myChart = new Chart(pie, {
         ]
     },
     options: {
-        title: {
-            display: true,
-            text: "Tweet Volume"
-        }
-    }
+      title: {
+          display: true,
+          text: "Tweet Volume"
+      }
+  }
 });
+
+var myBarChart = new Chart(bar, {
+  type: 'bar',
+  data: {
+    labels: labels,
+    datasets: [
+        {
+            data: data,
+            label: "Volume",
+            borderColor: 'rgb(211,211,211)',
+            backgroundColor:color,
+        }
+    ]
+},
+  options: {
+    title: {
+      display: true,
+      text: "Tweet Volume"
+    },
+    legend:{display:false},
+    scales: {
+        xAxes: [{
+          ticks: {
+            autoSkip: false
+        },
+            //barPercentage: 1,
+            barThickness: 'flex',
+            //maxBarThickness: 8,
+           // minBarLength: 2,
+            gridLines: {
+                //offsetGridLines: true
+            }
+        }]
+    }
+  }
+});
+
+
       } ,
 	
 	// create: function(listing) {
