@@ -19,14 +19,13 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         };
     // Create new user
     $scope.createUser = function() {
-      console.log($scope.user.first_name);
-      console.log($scope.user.last_name);
-      console.log($scope.user.username);
-      console.log($scope.user.password);
 	    
       Trends.createUser($scope.user).then(function (response) 
       {
-        console.log(response);
+        $scope.user.first_name = response.data.first_name;
+        $scope.user.last_name = response.data.last_name;
+        $scope.user.username = response.data.username;
+        $scope.user.id = response.data._id;
       }, function(error) 
       {
           console.log('Unable to create user:', error);
