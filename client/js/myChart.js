@@ -20,7 +20,7 @@ $("#renderBtn").click(
     }
 );
 
-var labels = [
+/*var labels = [
     "Vote for blue",
     "vote for red",
 ];
@@ -28,7 +28,7 @@ var data = [
     70,
     30,
    
-];
+];*/
 
 
 

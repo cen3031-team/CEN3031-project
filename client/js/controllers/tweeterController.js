@@ -11,15 +11,15 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       console.log('Unable to retrieve listings:', error);
     });
 
-   /*   $scope.showData = function(trendsArr){
+     /* $scope.showData = function(trendsArr){
           $scope.labels = [
-    "Vote for blue",
+    "Vote for me",
     "vote for red",
 ];
-$scope.data = [
+/*$scope.data = [
     70,
     30,
-];
+];*/
          $scope.pie = document.getElementById("pieChart").getContext('2d');
           $scope.myChart = new Chart(pie, {
     type: 'pie',
@@ -40,7 +40,7 @@ $scope.data = [
         }
     }
 });
-      }*/
+      }
     // $scope.detailedInfo = undefined;
 
     // $scope.addListing = function () {
