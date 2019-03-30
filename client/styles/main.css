@@ -7,6 +7,11 @@ body {
   margin-top: 20vh;
 }
 
+.signup-form {
+  max-width: 40vw;
+  margin-top: 20vh;
+}
+
 .navbar-brand {
   font-size: 2.5rem;
 }
@@ -56,3 +61,4 @@ body {
 .filter-container {
   margin-top: 50px;
 }
+
