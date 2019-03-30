@@ -18,44 +18,71 @@
 <body ng-app="tweeterTrends">
   <nav class="navbar navbar-dark bg-dark">
     <a href="/" class="navbar-brand">Tweeter Trends</a>
+
+
     <form class="form-inline">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="button"><i class="fas fa-user"></i> Profile</button>
+      <div class="dropdown">
+        <button type="button" class="btn btn-outline-info my-2 my-sm-0 dropdown-toggle" id="dropdownProfileButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> Profile</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownProfileButton">
+          <button class="dropdown-item">Edit Profile</a>
+          <button class="dropdown-item">Sign Out</a>
+        </div>
+      </div>
     </form>
+
   </nav>
   <div ng-controller="TrendsController" class="container-fluid">
 
+
     <div ng-if="!user.id">
-      <div ng-if="showSignupForm">
-        <!-- SIGNUP FORM -->
+
+      <!-- SIGNUP FORM -->
+      <div class="container signup-form" ng-if="showSignupForm">
+        <h1 class="text-center" style="margin-bottom: 20px;">Sign Up</h1>
         <form>
-          <h1>Signup Form</h1>
-          <input class="box" type="text" id="firstName" placeholder="First Name" ng-model="user.first_name"
-            required /><br>
-          <input class="box" type="text" id="lastName" placeholder="Last Name" ng-model="user.last_name" required /><br>
-          <input class="box" type="text" id="username" placeholder="Username" ng-model="user.username" required /><br>
-          <input class="box" type="password" id="password" placeholder="Password" ng-model="user.password"
-            required /><br>
-          <br>
-          <input type="button" name="submitDetails" id="submitDetails" value="Submit" ng-click="createUser()" /><br>
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" id="firstname" placeholder="First Name" ng-model="user.first_name"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="user.last_name"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+              placeholder="rob@email.com" ng-model="user.username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password"
+              required>
+          </div>
+          <button ng-click="createUser()" type="submit" class="btn btn-primary">Sign Up</button>
+          <button ng-click="toggleLoginView()" type="button" class="btn btn-outline-info">Back</button>
         </form>
-        <!--------------->
       </div>
+      <!-- ---------- -->
 
       <!-- Login Form -->
       <div class="container login-form" ng-if="showLoginForm">
         <h1 class="text-center" style="margin-bottom: 20px;">Login</h1>
         <form>
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="rob@email.com">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="*****">
-            </div>
-            <button ng-click="login()" type="submit" class="btn btn-primary">Submit</button>
-            <button ng-click="toggleSignupView()" type="button" class="btn btn-outline-info">Create Account</button>
-          </form>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+              placeholder="rob@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="********" required>
+          </div>
+          <button ng-click="login()" type="submit" class="btn btn-primary">Submit</button>
+          <button ng-click="toggleSignupView()" type="button" class="btn btn-outline-info">Create Account</button>
+        </form>
       </div>
       <!-- ---------- -->
 
@@ -93,13 +120,13 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
 
 
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>

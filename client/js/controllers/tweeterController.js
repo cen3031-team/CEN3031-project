@@ -18,6 +18,12 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
     }
+    
+    // Route to Login Page
+    $scope.toggleLoginView = function () {
+      $scope.showLoginForm = true;
+      $scope.showSignupForm = false;
+    }
 
     // User object
     $scope.user = {
