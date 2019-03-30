@@ -13,13 +13,15 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.showLoginForm = true;
     $scope.showSignupForm = false;
     $scope.showProfilePage = false;
+    $scope.showTrendsPage = false;
+
 
     // Route to Sign Up Page
     $scope.toggleSignupView = function () {
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
       $scope.showProfilePage = false;
-      $scope.showLogoutPage = false;
+      $scope.showTrendsPage = false;
     }
     
     // Route to Login Page
@@ -27,14 +29,32 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showLoginForm = true;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
-      $scope.showLogoutPage = false;
+      $scope.showTrendsPage = false;
+    }
+
+    $scope.toggleLogoutView = function () {
+
+      $scope.user = {
+        first_name: "",
+        last_name: "",
+        username: "",
+        password: "",
+        id: null
+      };
+      $scope.toggleLoginView();
     }
 
     // Route to Profile Page
     $scope.toggleProfileView = function () {
-      $scope.showProfilePage = true;$scope.showLoginForm = false;
+      $scope.showProfilePage = true;
+      $scope.showLoginForm = false;
       $scope.showSignupForm = false;
-      $scope.showLogoutPage = false;
+      $scope.showTrendsPage = false;
+    }
+
+    // Checks whether user is logged in
+    $scope.isLoggedIn = function () {
+      return ($scope.user.id == null)
     }
 
     // User object
@@ -46,10 +66,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       id: null
     };
 
-    // Check if user signed in, if not show login page
-    if (!$scope.user.id) {
 
-    }
 
     var response = {
       data: {
@@ -113,10 +130,39 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.user.last_name = response.data.last_name;
         $scope.user.username = response.data.username;
         $scope.user.id = response.data._id;
+
+        // Toggle Views
+        $scope.showSignupForm = false;
+        $scope.showLoginForm = false;
+        $scope.showTrendsPage = true;
       }, function (error) {
         console.log('Unable to create user:', error);
       });
     };
+
+    // Login User
+    $scope.loginUser = function () {
+      console.log("response");
+
+      if ($scope.user.username != "" && $scope.user.password != "") {
+        Trends.loginUser($scope.user.username).then(function (response) {
+          console.log(response);
+          // Save user details
+          $scope.user.first_name = response.data.first_name;
+          $scope.user.last_name = response.data.last_name;
+          $scope.user.username = response.data.username;
+          $scope.user.id = response.data._id;
+
+          // Toggle Views
+          $scope.showSignupForm = false;
+          $scope.showLoginForm = false;
+          $scope.showTrendsPage = true;
+          $scope.showProfilePage = false;
+        }, function (error) {
+          console.log("Wrong Credentials");
+        });
+      }
+    }
 
     // $scope.detailedInfo = undefined;
 
