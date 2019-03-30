@@ -6,16 +6,20 @@ angular.module('trends', []).factory('Trends', function($http) {
       return $http.get('/api/trends');
     },
       renderPieChart: function(trendsArr){
-          var labels = [
+        /*  var labels = [
     "Vote for blue",
     "vote for red",
 ];
 var data = [
     70,
-    30,
+    10,
    
-];
-          var pie = document.getElementById("pieChart").getContext('2d');
+];*/
+
+var labels = [trendsArr.name];
+var data = [trendsArr.tweet_volume];
+
+var pie = document.getElementById("pieChart").getContext('2d');
 var myChart = new Chart(pie, {
     type: 'pie',
     data: {

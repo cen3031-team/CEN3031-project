@@ -20,7 +20,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     70,
     30,
 ];*/
-         $scope.pie = document.getElementById("pieChart").getContext('2d');
+         /*$scope.pie = document.getElementById("pieChart").getContext('2d');
           $scope.myChart = new Chart(pie, {
     type: 'pie',
     data: {
@@ -40,7 +40,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         }
     }
 });
-      }
+  }*/
     // $scope.detailedInfo = undefined;
 
     // $scope.addListing = function () {
