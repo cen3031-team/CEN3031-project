@@ -18,9 +18,8 @@ exports.list = function(req, res) {
   }
 
   request(reqOptions, (error, response, body) => {
-    if (error) console.log(error);
+	if (error) res.status(400).send(error);
     const trendArr = JSON.parse(body)[0];
-    console.log(trendArr);
     res.json(trendArr);
   });
 
