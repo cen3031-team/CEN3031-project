@@ -59,14 +59,14 @@
         <div id="trends" class="container" >
            
            
-          <!-- Repeat Trend topics for each trend in array -->
-          
-          <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null" >
-           
-            {{trend.name}}
-            
-          </div>
+      <div class="col-9 col-lg-10">
+        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
 
+        <div class="display-container">
+          <!-- Repeat Trend topics for each trend in array -->
+          <div ng-repeat="trend in trendsArr" class="trendCard">
+            {{trend.name}}
+          </div>
           
           <!-- SIGNUP FORM -->
           <form>
@@ -84,19 +84,8 @@
           </form>
           
           
-
         </div>
-          <div id = "trendsData" class ="display-container" style="display: none">
-              <button type="button" class="btn btn-light" onclick="toggle(this)"><a href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar</a></button>
-             <canvas id="pieChart"></canvas>
-             <canvas id="barChart" style="display:none"></canvas >
-   
-
-
-          
-          </div>
       </div>
-        
     </div>
   </div>
   <!-- Optional JavaScript -->
@@ -113,38 +102,6 @@
   <script src="js/app.js"></script>
   <script src="js/factories/tweeterFactory.js"></script>
   <script src="js/controllers/tweeterController.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="./js/myChart.js"></script>
-    <script type="text/javascript">
-function SwapDivsWithClick(div1,div2)
-{
-   d1 = document.getElementById(div1);
-   d2 = document.getElementById(div2);
-   if( d2.style.display == "none" )
-   {
-      d1.style.display = "none";
-      d2.style.display = "block";
-   }
-   else
-   {
-      d1.style.display = "block";
-      d2.style.display = "none";
-   }
-}
-</script>
-<script type="text/javascript">
-  function toggle (t) {
-  if (t.childNodes[0].innerHTML == "Bar") {
-      t.childNodes[0].innerHTML = "Pie";
-  } else {
-      t.childNodes[0].innerHTML = "Bar";
-  }
-  }
-  </script>
-
-
-    
 </body>
 
 </html>
