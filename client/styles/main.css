@@ -12,6 +12,16 @@ body {
   margin-top: 20vh;
 }
 
+.profile-page {
+  max-width: 40vw;
+  margin-top: 10vh;
+}
+
+.logout-page {
+  max-width: 40vw;
+  margin-top: 10vh;
+}
+
 .navbar-brand {
   font-size: 2.5rem;
 }
@@ -61,4 +71,3 @@ body {
 .filter-container {
   margin-top: 50px;
 }
-

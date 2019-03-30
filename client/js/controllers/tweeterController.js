@@ -10,19 +10,31 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     // });
 
     // Frontend Toggles
+    $scope.showLoginForm = true;
     $scope.showSignupForm = false;
-    $scope.showLoginForm = $scope.showSignupForm == false ? true : false;
+    $scope.showProfilePage = false;
 
     // Route to Sign Up Page
     $scope.toggleSignupView = function () {
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
+      $scope.showProfilePage = false;
+      $scope.showLogoutPage = false;
     }
     
     // Route to Login Page
     $scope.toggleLoginView = function () {
       $scope.showLoginForm = true;
       $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+      $scope.showLogoutPage = false;
+    }
+
+    // Route to Profile Page
+    $scope.toggleProfileView = function () {
+      $scope.showProfilePage = true;$scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showLogoutPage = false;
     }
 
     // User object
