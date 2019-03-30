@@ -43,6 +43,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 });
   }*/
 
+
     $scope.user =
         {
           first_name: "",
