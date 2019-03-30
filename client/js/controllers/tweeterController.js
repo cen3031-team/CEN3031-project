@@ -3,46 +3,11 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     /* Get all the trends, then bind it to the scope */
     Trends.getAll().then(function (response) {
       $scope.trendsArr = response.data.trends;
-    //    $scope.showData(response.data.trends);
-        Trends.renderPieChart($scope.trendsArr);
       $scope.location = response.data.locations[0].name;
       // console.log($scope.trends);
     }, function (error) {
       console.log('Unable to retrieve listings:', error);
     });
-
-
-     /* $scope.showData = function(trendsArr){
-          $scope.labels = [
-    "Vote for me",
-    "vote for red",
-];
-/*$scope.data = [
-    70,
-    30,
-];*/
-         /*$scope.pie = document.getElementById("pieChart").getContext('2d');
-          $scope.myChart = new Chart(pie, {
-    type: 'pie',
-    data: {
-        labels: labels,
-        datasets: [
-            {
-                data: data,
-                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(192, 0, 0, 1)'],
-                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(192, 0, 0, 0.2)'],
-            }
-        ]
-    },
-    options: {
-        title: {
-            display: true,
-            text: "Colors election"
-        }
-    }
-});
-  }*/
-
 
     $scope.user =
         {
@@ -66,7 +31,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           console.log('Unable to create user:', error);
       });
     };
-
 
     // $scope.detailedInfo = undefined;
 
