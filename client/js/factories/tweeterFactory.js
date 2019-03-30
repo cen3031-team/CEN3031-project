@@ -10,6 +10,10 @@ angular.module('trends', []).factory('Trends', function ($http) {
     createUser: function (user) {
       return $http.post('/api/user', user);
     },
+
+    loginUser: function (credentials) {
+      return $http.get('/api/user/' + credentials);
+    }
     // create: function(listing) {
     //   return $http.post('/api/listings', listing);
     //   }, 

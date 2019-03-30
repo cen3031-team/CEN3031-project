@@ -16,9 +16,11 @@ exports.createUser = (req, res) => {
 
 // Find user by username
 exports.getUserByUsername = (req, res) => {
-  User.find({username: req.params.username}, (err, user) => {
-    if (err) res.status(400).send(err);
-    res.json(user);
+  User.findOne({username: req.params.username}, (error, user) => {
+    console.log(user)
+    console.log(req.params.username);
+    if (error || user == null) res.status(400).send(error);
+    else res.json(user);
   });
 }
 
