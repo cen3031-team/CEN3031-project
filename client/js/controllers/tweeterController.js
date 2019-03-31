@@ -9,26 +9,64 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     //   console.log('Unable to retrieve listings:', error);
     // });
 
-    // Frontend Toggles / Vars
-    $scope.showSignupForm = false;
+    // Frontend Toggles
     $scope.showLoginForm = true;
+    $scope.showSignupForm = false;
+    $scope.showProfilePage = false;
+    $scope.showDashboard = false;
+    $scope.showQueryPage = false;
     $scope.showTrendsPage = false;
+
 
     // Route to Sign Up Page
     $scope.toggleSignupView = function () {
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
+      $scope.showProfilePage = false;
+      $scope.showLogoutPage = false;
+      $scope.showTrendsPage = false;
+
     }
     
     // Route to Login Page
     $scope.toggleLoginView = function () {
       $scope.showLoginForm = true;
       $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+      $scope.showLogoutPage = false;
+      $scope.showTrendsPage = false;
+
+    }
+
+    // Route to Profile Page
+    $scope.toggleProfileView = function () {
+      $scope.showProfilePage = true;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showLogoutPage = false;
+      $scope.showTrendsPage = false;
+
     }
 
     // Checks whether user is logged in
     $scope.isLoggedIn = function () {
       return ($scope.user.id == null)
+    }
+
+    // Toggle Query Tool View
+    $scope.showQueryTool = function() {
+      $scope.showQueryPage = true;
+      $scope.showTrendsPage = false;
+      $scope.showProfilePage = false;
+
+    }
+
+    // Toggle Trends Tool View
+    $scope.showTrendsTool = function() {
+      $scope.showQueryPage = false;
+      $scope.showTrendsPage = true;
+      $scope.showProfilePage = false;
+
     }
 
     // User object
@@ -109,7 +147,9 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.showSignupForm = false;
         $scope.showLoginForm = false;
         $scope.showTrendsPage = true;
+        $scope.showDashboard = true;
       }, function (error) {
+
         console.log('Unable to create user:', error);
       });
     };
@@ -118,7 +158,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.loginUser = function () {
       if ($scope.user.username != "" && $scope.user.password != "") {
         Trends.loginUser($scope.user.username).then(function (response) {
-          console.log(response);
           // Save user details
           $scope.user.first_name = response.data.first_name;
           $scope.user.last_name = response.data.last_name;
@@ -128,7 +167,9 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           // Toggle Views
           $scope.showSignupForm = false;
           $scope.showLoginForm = false;
+          $scope.showDashboard = true;
           $scope.showTrendsPage = true;
+
         }, function (error) {
           console.log("Wrong Credentials");
         });

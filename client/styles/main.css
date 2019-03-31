@@ -2,6 +2,10 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+.main-container {
+  margin: 0;
+}
+
 .login-form {
   max-width: 40vw;
   margin-top: 20vh;
@@ -10,6 +14,16 @@ body {
 .signup-form {
   max-width: 40vw;
   margin-top: 20vh;
+}
+
+.profile-page {
+  max-width: 40vw;
+  margin-top: 10vh;
+}
+
+.logout-page {
+  max-width: 40vw;
+  margin-top: 10vh;
 }
 
 .navbar-brand {
@@ -62,3 +76,7 @@ body {
   margin-top: 50px;
 }
 
+.tool-menu {
+  margin-top: 10px;
+  border-radius: 0%;
+}
