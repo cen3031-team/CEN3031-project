@@ -159,3 +159,9 @@ body {
   margin: 30px 5px 20px 20px;
   font-style: italic;
 }
+canvas{
+
+  width:1000px !important;
+  height:500px !important;
+
+}
