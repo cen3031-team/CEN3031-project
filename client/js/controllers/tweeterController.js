@@ -142,7 +142,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.user.last_name = response.data.last_name;
         $scope.user.username = response.data.username;
         $scope.user.id = response.data._id;
-
+        console.log("creating user");
         // Toggle Views
         $scope.showSignupForm = false;
         $scope.showLoginForm = false;
