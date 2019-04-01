@@ -1,13 +1,14 @@
 angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
   function ($scope, Trends) {
     // /* Get all the trends, then bind it to the scope */
-    // Trends.getAll().then(function (response) {
-    //   $scope.trendsArr = response.data.trends;
-    //   $scope.location = response.data.locations[0].name;
+     Trends.getAll().then(function (response) {
+      $scope.trendsArr = response.data.trends;
+      Trends.renderPieChart($scope.trendsArr);
+       $scope.location = response.data.locations[0].name;
     //   // console.log($scope.trends);
-    // }, function (error) {
-    //   console.log('Unable to retrieve listings:', error);
-    // });
+     }, function (error) {
+       console.log('Unable to retrieve listings:', error);
+     });
 
     // Frontend Toggles / Vars
     $scope.showSignupForm = false;
@@ -42,7 +43,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
 
 
-    var response = {
+    /*var response = {
       data: {
         trends: [{
             name: '#ENGvSCO',
@@ -92,9 +93,9 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           woeid: 1
         }]
       }
-    }
-    $scope.trendsArr = response.data.trends;
-    $scope.location = response.data.locations[0].name;
+    }*/
+    
+    //$scope.location = response.data.locations[0].name;
 
     // Create new user
     $scope.createUser = function () {
