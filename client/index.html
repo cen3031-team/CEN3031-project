@@ -41,22 +41,22 @@
         <form>
           <div class="form-group">
             <label for="firstname">First Name</label>
-            <input type="text" class="form-control" id="firstname" placeholder="First Name" ng-model="user.first_name"
+            <input type="text" class="form-control" id="firstnamesignup" placeholder="First Name" ng-model="user.first_name"
               required>
           </div>
           <div class="form-group">
             <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="user.last_name"
+            <input type="text" class="form-control" id="lastnamesignup" placeholder="Last Name" ng-model="user.last_name"
               required>
           </div>
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+            <input type="text" class="form-control" id="usernamesignup" aria-describedby="emailHelp"
               placeholder="rob@email.com" ng-model="user.username" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password"
+            <input type="password" class="form-control" id="passwordsignup" placeholder="********" ng-model="user.password"
               required>
           </div>
           <button ng-click="createUser()" type="submit" class="btn btn-primary">Sign Up</button>
@@ -71,12 +71,12 @@
         <form>
           <div class="form-group">
             <label for="username">Username</label>
-            <input ng-model="user.username" type="text" class="form-control" id="username" aria-describedby="emailHelp"
+            <input ng-model="user.username" type="text" class="form-control" id="usernamelogin" aria-describedby="emailHelp"
               placeholder="rob@email.com" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input ng-model="user.password" type="password" class="form-control" id="password" placeholder="********"
+            <input ng-model="user.password" type="password" class="form-control" id="passwordlogin" placeholder="********"
               required>
           </div>
           <button ng-click="loginUser()" type="submit" class="btn btn-primary">Submit</button>
@@ -146,18 +146,19 @@
       <form>
         <div class="form-group">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control" id="firstname" placeholder="First Name" ng-model="fakeuser.first_name">
+          <input type="text" class="form-control" id="firstname" placeholder="{{user.first_name}}" ng-model="user.first_name">
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="fakeuser.last_name">
+          <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="user.last_name">
         </div>
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="rob@email.com"
-            ng-model="fakeuser.username">
+          <label for="username">Password</label>
+          <input type="text" class="form-control" id="password" placeholder="********"
+            ng-model="user.password">
         </div>
         <button ng-click="saveUser()" type="button" class="btn btn-primary">Save</button>
+        <button ng-click="toggleTrendsView()" type="button" class="btn btn-outline-info">Back</button>
       </form>
     </div>
     <!-- ---------- -->

@@ -13,7 +13,12 @@ angular.module('trends', []).factory('Trends', function ($http) {
 
     loginUser: function (credentials) {
       return $http.get('/api/user/' + credentials);
+    },
+
+    updateUser: function(user) {
+      return $http.put('/api/user/' + user.id, user);
     }
+
     // create: function(listing) {
     //   return $http.post('/api/listings', listing);
     //   }, 

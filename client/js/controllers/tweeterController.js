@@ -75,11 +75,11 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     // Fake user object
     $scope.fakeuser = {
-      first_name: "Karen",
-      last_name: "Kim",
-      username: "kk@gmail.com",
-      password: "babypink",
-      id: 420
+      first_name: $scope.user.first_name,
+      last_name: $scope.user.last_name,
+      username: $scope.user.username,
+      password: $scope.user.password,
+      id: $scope.user.id
     };
 
     var response = {
@@ -165,10 +165,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           $scope.user.id = response.data._id;
 
           // Toggle Views
-          $scope.showSignupForm = false;
-          $scope.showLoginForm = false;
-          $scope.showTrendsPage = true;
-          $scope.showProfilePage = false;
+          $scope.toggleTrendsView();
         }, function (error) {
           console.log("Wrong Credentials");
         });
@@ -176,13 +173,11 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     }
 
     $scope.saveUser = function() {
-      $scope.fakeuser = {
-        first_name: "Lieun",
-        last_name: "Lee",
-        username: "ll@gmail.com",
-        password: "pinkbaby",
-        id: 0613
-      };
+      Trends.updateUser($scope.user).then(function (response) {
+        console.log(response);
+      }, function (error) {
+        console.log('Unable to update user:', error);
+      });
     }
 
     // $scope.detailedInfo = undefined;
