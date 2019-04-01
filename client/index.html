@@ -152,6 +152,33 @@
   <script src="js/app.js"></script>
   <script src="js/factories/tweeterFactory.js"></script>
   <script src="js/controllers/tweeterController.js"></script>
+
+  <script type="text/javascript">
+    function SwapDivsWithClick(div1,div2)
+    {
+       d1 = document.getElementById(div1);
+       d2 = document.getElementById(div2);
+       if( d2.style.display == "none" )
+       {
+          d1.style.display = "none";
+          d2.style.display = "block";
+       }
+       else
+       {
+          d1.style.display = "block";
+          d2.style.display = "none";
+       }
+    }
+    </script>
+    <script type="text/javascript">
+      function toggle (t) {
+      if (t.childNodes[0].innerHTML == "Bar") {
+          t.childNodes[0].innerHTML = "Pie";
+      } else {
+          t.childNodes[0].innerHTML = "Bar";
+      }
+      }
+      </script>
 </body>
 
 </html>

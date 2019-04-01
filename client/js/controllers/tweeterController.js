@@ -4,6 +4,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     Trends.getAll().then(function (response) {
       $scope.trendsArr = response.data.trends;
       $scope.location = response.data.locations[0].name;
+      Trends.renderPieChart($scope.trendsArr);
       // console.log($scope.trends);
     }, function (error) {
       console.log('Unable to retrieve listings:', error);
