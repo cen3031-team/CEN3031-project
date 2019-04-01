@@ -188,7 +188,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.searchTweet = function () {
 
       Trends.getTweets($scope.query.text).then(function (response) {
-        console.log(response);
         $scope.query.tweetArray = response.data.statuses;
       }, function(error) {
         console.log("Error getting query data: " + error);
