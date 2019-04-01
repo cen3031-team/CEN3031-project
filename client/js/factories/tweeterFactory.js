@@ -22,17 +22,6 @@ angular.module('trends', []).factory('Trends', function ($http) {
     },
 
     renderPieChart: function(trendsArr){
-      /*  var labels = [
-  "Vote for blue",
-  "vote for red",
-];
-var data = [
-  70,
-  10,
- 
-];*/
-
-
 function random_rgba() {
 var o = Math.round, r = Math.random, s = 255;
 return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
@@ -59,7 +48,7 @@ var data = [trendsArr[1].tweet_volume];*/
 
 var pie = document.getElementById("pieChart").getContext('2d');
 var bar = document.getElementById("barChart").getContext('2d');
-var bubble = document.getElementById("bubbleChart").getContext('2d');
+//var bubble = document.getElementById("bubbleChart").getContext('2d');
 var myChart = new Chart(pie, {
   type: 'pie',
   data: {
@@ -117,43 +106,6 @@ options: {
 });
         
         
-
-
-        
-        
-/*var myBubbleChart = new Chart(bubble, {
-  type: 'bubble',
-  data: {
-    labels: labels,
-    datasets: [
-      {
-        label: "Popularity",
-        backgroundColor: color,
-        borderColor: "rgba(255,221,50,1)",
-        data: bubbledata
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Tweet Volume vs Date Created'
-    }, scales: {
-      yAxes: [{ 
-        scaleLabel: {
-          display: true,
-          labelString: "Popularity"
-        }
-      }],
-      xAxes: [{ 
-        scaleLabel: {
-          display: true,
-          labelString: "Date Created"
-        }
-      }]
-    }
-  }
-});*/
         
 
 
