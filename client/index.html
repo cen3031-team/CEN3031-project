@@ -110,7 +110,35 @@
       <!-- Trending Tool Page -->
       <!-- ------------------------------------------------------------------- -->
       <div ng-if="showTrendsPage" class="col-9 col-lg-9" id="Trending">
-        <div ng-include="'trends.html'"></div>
+        <!--<div ng-include="'trends.html'"></div>-->
+        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
+<button type="button" class="btn btn-light" ng-click="showTrendsTool()"><a href="javascript:SwapDivsWithClick('trending','trendsData')">See
+    Data {{location}}</a></button>
+<!--<button type="button" class="btn btn-light">Test</button>-->
+<div id="trends" class="container">
+  <div class="col-9 col-lg-10">
+    <!--<h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>-->
+
+    <div class="display-container" id="trending">
+      
+      <!-- Repeat Trend topics for each trend in array -->
+      <div ng-repeat="trend in trendsArr" class="trendCard">
+        {{trend.name}}
+      </div>
+    </div>
+    <div id = "trendsData" class ="display-container" style="display: none">
+      
+        <button type="button" class="btn btn-light" onclick="toggle(this)"><a href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar Graph</a></button>
+       <canvas id="pieChart"></canvas>
+       <canvas id="barChart" style="display:none"></canvas >
+       <!-- <canvas id="bubbleChart" style ="display:none"> </canvas>-->
+
+
+
+    
+    </div>
+  </div>
+</div>
       </div>
 
       <!-- ------------------------------------------------------------------- -->
@@ -152,6 +180,38 @@
   <script src="js/app.js"></script>
   <script src="js/factories/tweeterFactory.js"></script>
   <script src="js/controllers/tweeterController.js"></script>
+  <script src="./js/myChart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+
+  <script type="text/javascript">
+    function SwapDivsWithClick(div1,div2)
+    {
+       d1 = document.getElementById(div1);
+       d2 = document.getElementById(div2);
+       if( d2.style.display == "none" )
+       {
+          d1.style.display = "none";
+          d2.style.display = "block";
+       }
+       else
+       {
+          d1.style.display = "block";
+          d2.style.display = "none";
+       }
+    }
+    </script>
+    <script type="text/javascript">
+      function toggle (t) {
+      if (t.childNodes[0].innerHTML == "Bar Graph") {
+          t.childNodes[0].innerHTML = "Pie Chart";
+      } else {
+          t.childNodes[0].innerHTML = "Bar Graph";
+      }
+      }
+      </script>
+
+
+
 </body>
 
 </html>
