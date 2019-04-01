@@ -18,7 +18,6 @@
 <body ng-app="tweeterTrends">
   <div ng-controller="TrendsController">
 
-
     <nav class="navbar navbar-dark bg-dark">
       <a href="/" class="navbar-brand">Tweeter Trends</a>
       <form class="form-inline">
@@ -35,6 +34,7 @@
     </nav>
 
     <div class="container-fluid" ng-if="!user.id">
+      
       <!-- SIGNUP FORM -->
       <div class="container signup-form" ng-if="showSignupForm">
         <h1 class="text-center" style="margin-bottom: 20px;">Sign Up</h1>
@@ -143,7 +143,22 @@
     <!-- Profile Page -->
     <div class="container profile-page" ng-if="showProfilePage">
       <h1 class="text-center" style="margin-bottom: 20px;">Profile</h1>
-
+      <form>
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" id="firstname" placeholder="First Name" ng-model="fakeuser.first_name">
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="fakeuser.last_name">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="rob@email.com"
+            ng-model="fakeuser.username">
+        </div>
+        <button ng-click="saveUser()" type="button" class="btn btn-primary">Save</button>
+      </form>
     </div>
     <!-- ---------- -->
 

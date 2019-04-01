@@ -52,6 +52,13 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showTrendsPage = false;
     }
 
+    $scope.toggleTrendsView = function () {
+      $scope.showTrendsPage = true;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
+
     // Checks whether user is logged in
     $scope.isLoggedIn = function () {
       return ($scope.user.id == null)
@@ -66,7 +73,14 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       id: null
     };
 
-
+    // Fake user object
+    $scope.fakeuser = {
+      first_name: "Karen",
+      last_name: "Kim",
+      username: "kk@gmail.com",
+      password: "babypink",
+      id: 420
+    };
 
     var response = {
       data: {
@@ -132,9 +146,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.user.id = response.data._id;
 
         // Toggle Views
-        $scope.showSignupForm = false;
-        $scope.showLoginForm = false;
-        $scope.showTrendsPage = true;
+        $scope.toggleTrendsView();
       }, function (error) {
         console.log('Unable to create user:', error);
       });
@@ -142,7 +154,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     // Login User
     $scope.loginUser = function () {
-      console.log("response");
 
       if ($scope.user.username != "" && $scope.user.password != "") {
         Trends.loginUser($scope.user.username).then(function (response) {
@@ -162,6 +173,16 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           console.log("Wrong Credentials");
         });
       }
+    }
+
+    $scope.saveUser = function() {
+      $scope.fakeuser = {
+        first_name: "Lieun",
+        last_name: "Lee",
+        username: "ll@gmail.com",
+        password: "pinkbaby",
+        id: 0613
+      };
     }
 
     // $scope.detailedInfo = undefined;
