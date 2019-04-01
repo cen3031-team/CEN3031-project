@@ -20,6 +20,17 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a href="/" class="navbar-brand">Tweeter Trends</a>
+<!-- ======================================================================= -->
+      <form ng-if="showQueryPage" class="form-inline ">
+        <div class="input-group">
+          <input ng-model="query.text" class="search-bar" type="text" placeholder="Search">
+          <div class="input-group-append">
+            <button ng-click="searchTweet()" class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+<!-- ======================================================================= -->
+
       <form class="form-inline">
         <div class="dropdown">
           <button type="button" class="btn btn-outline-info my-2 my-sm-0 dropdown-toggle" id="dropdownProfileButton"
@@ -65,7 +76,8 @@
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
         <!-- Menu Buttons for switching tools -->
-        <button ng-click="showQueryTool()" class="btn btn-secondary btn-block tool-menu" style="margin-top: 30px;">Query Tool</button>
+        <button ng-click="showQueryTool()" class="btn btn-secondary btn-block tool-menu" style="margin-top: 30px;">Query
+          Tool</button>
         <button ng-click="showTrendsTool()" class="btn btn-secondary btn-block tool-menu">Trends Tool</button>
 
         <div class="filter-container">
