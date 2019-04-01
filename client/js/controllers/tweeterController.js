@@ -27,7 +27,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showTrendsPage = false;
 
     }
-    
+
     // Route to Login Page
     $scope.toggleLoginView = function () {
       $scope.showLoginForm = true;
@@ -54,7 +54,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     }
 
     // Toggle Query Tool View
-    $scope.showQueryTool = function() {
+    $scope.showQueryTool = function () {
       $scope.showQueryPage = true;
       $scope.showTrendsPage = false;
       $scope.showProfilePage = false;
@@ -62,7 +62,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     }
 
     // Toggle Trends Tool View
-    $scope.showTrendsTool = function() {
+    $scope.showTrendsTool = function () {
       $scope.showQueryPage = false;
       $scope.showTrendsPage = true;
       $scope.showProfilePage = false;
@@ -83,45 +83,45 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     var response = {
       data: {
         trends: [{
-            name: '#ENGvSCO',
-            url: 'http://twitter.com/search?q=%23ENGvSCO',
-            promoted_content: null,
-            query: '%23ENGvSCO',
-            tweet_volume: 22580
-          },
-          {
-            name: '#iTrustChowkidar',
-            url: 'http://twitter.com/search?q=%23iTrustChowkidar',
-            promoted_content: null,
-            query: '%23iTrustChowkidar',
-            tweet_volume: 21351
-          },
-          {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          },
-          {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          }, {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          }, {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          }
+          name: '#ENGvSCO',
+          url: 'http://twitter.com/search?q=%23ENGvSCO',
+          promoted_content: null,
+          query: '%23ENGvSCO',
+          tweet_volume: 22580
+        },
+        {
+          name: '#iTrustChowkidar',
+          url: 'http://twitter.com/search?q=%23iTrustChowkidar',
+          promoted_content: null,
+          query: '%23iTrustChowkidar',
+          tweet_volume: 21351
+        },
+        {
+          name: '#TeamGOT7',
+          url: 'http://twitter.com/search?q=%23TeamGOT7',
+          promoted_content: null,
+          query: '%23TeamGOT7',
+          tweet_volume: 3729973
+        },
+        {
+          name: '#TeamGOT7',
+          url: 'http://twitter.com/search?q=%23TeamGOT7',
+          promoted_content: null,
+          query: '%23TeamGOT7',
+          tweet_volume: 3729973
+        }, {
+          name: '#TeamGOT7',
+          url: 'http://twitter.com/search?q=%23TeamGOT7',
+          promoted_content: null,
+          query: '%23TeamGOT7',
+          tweet_volume: 3729973
+        }, {
+          name: '#TeamGOT7',
+          url: 'http://twitter.com/search?q=%23TeamGOT7',
+          promoted_content: null,
+          query: '%23TeamGOT7',
+          tweet_volume: 3729973
+        }
         ],
         as_of: '2019-03-16T19:26:40Z',
         created_at: '2019-03-16T19:24:08Z',
@@ -175,6 +175,30 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         });
       }
     }
+
+    // =========================================================================
+    // Query Tool
+    // =========================================================================
+    $scope.query = {
+      text: "",
+      tweetArray: []
+    }
+
+    // Query search button event handler
+    $scope.searchTweet = function () {
+
+      Trends.getTweets($scope.query.text).then(function (response) {
+        console.log(response);
+        $scope.query.tweetArray = response.data.statuses;
+      }, function(error) {
+        console.log("Error getting query data: " + error);
+      });
+    }
+
+
+    // Clears
+
+    // =========================================================================
 
     // $scope.detailedInfo = undefined;
 

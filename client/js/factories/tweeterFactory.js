@@ -6,25 +6,22 @@ angular.module('trends', []).factory('Trends', function ($http) {
       return $http.get('/api/trends');
     },
 
+    // Search popular tweets
+    getTweets: function (query) {
+      return $http.get('/api/search/' + query);
+    },
+
     // Creates New User
     createUser: function (user) {
       return $http.post('/api/user', user);
     },
 
+    // Login User
     loginUser: function (credentials) {
       return $http.get('/api/user/' + credentials);
     }
-    // create: function(listing) {
-    //   return $http.post('/api/listings', listing);
-    //   }, 
+   
 
-    //   delete: function(id) {
-    //    /**
-    //       return result of HTTP delete method
-    //      */
-    //     return $http.delete('/api/listings/' + id);
-
-    //   }
   };
 
   return methods;

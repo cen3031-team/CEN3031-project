@@ -5,7 +5,8 @@ var path = require('path'),
   bodyParser = require('body-parser'),
   config = require('./config'),
   trendsRouter = require('../routes/trends.server.routes'),
-  userRouter = require('../routes/user.server.routes');
+  userRouter = require('../routes/user.server.routes'),
+  queryRouter = require('../routes/queries.server.routes');
 
 module.exports.init = function () {
   //connect to database
@@ -31,6 +32,9 @@ module.exports.init = function () {
   Use the listings router for requests to the api */
   app.use('/api/trends', trendsRouter);
 
+  //Query router
+  app.use('/api/search', queryRouter);
+  
   // User router
   app.use('/api/user', userRouter);
 
