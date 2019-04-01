@@ -1,13 +1,13 @@
 angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
   function ($scope, Trends) {
-    // /* Get all the trends, then bind it to the scope */
-    // Trends.getAll().then(function (response) {
-    //   $scope.trendsArr = response.data.trends;
-    //   $scope.location = response.data.locations[0].name;
-    //   // console.log($scope.trends);
-    // }, function (error) {
-    //   console.log('Unable to retrieve listings:', error);
-    // });
+    /* Get all the trends, then bind it to the scope */
+    Trends.getAll().then(function (response) {
+      $scope.trendsArr = response.data.trends;
+      $scope.location = response.data.locations[0].name;
+      // console.log($scope.trends);
+    }, function (error) {
+      console.log('Unable to retrieve listings:', error);
+    });
 
     // Frontend Toggles
     $scope.showLoginForm = true;
@@ -80,59 +80,59 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
 
 
-    var response = {
-      data: {
-        trends: [{
-          name: '#ENGvSCO',
-          url: 'http://twitter.com/search?q=%23ENGvSCO',
-          promoted_content: null,
-          query: '%23ENGvSCO',
-          tweet_volume: 22580
-        },
-        {
-          name: '#iTrustChowkidar',
-          url: 'http://twitter.com/search?q=%23iTrustChowkidar',
-          promoted_content: null,
-          query: '%23iTrustChowkidar',
-          tweet_volume: 21351
-        },
-        {
-          name: '#TeamGOT7',
-          url: 'http://twitter.com/search?q=%23TeamGOT7',
-          promoted_content: null,
-          query: '%23TeamGOT7',
-          tweet_volume: 3729973
-        },
-        {
-          name: '#TeamGOT7',
-          url: 'http://twitter.com/search?q=%23TeamGOT7',
-          promoted_content: null,
-          query: '%23TeamGOT7',
-          tweet_volume: 3729973
-        }, {
-          name: '#TeamGOT7',
-          url: 'http://twitter.com/search?q=%23TeamGOT7',
-          promoted_content: null,
-          query: '%23TeamGOT7',
-          tweet_volume: 3729973
-        }, {
-          name: '#TeamGOT7',
-          url: 'http://twitter.com/search?q=%23TeamGOT7',
-          promoted_content: null,
-          query: '%23TeamGOT7',
-          tweet_volume: 3729973
-        }
-        ],
-        as_of: '2019-03-16T19:26:40Z',
-        created_at: '2019-03-16T19:24:08Z',
-        locations: [{
-          name: 'Worldwide',
-          woeid: 1
-        }]
-      }
-    }
-    $scope.trendsArr = response.data.trends;
-    $scope.location = response.data.locations[0].name;
+    // var response = {
+    //   data: {
+    //     trends: [{
+    //       name: '#ENGvSCO',
+    //       url: 'http://twitter.com/search?q=%23ENGvSCO',
+    //       promoted_content: null,
+    //       query: '%23ENGvSCO',
+    //       tweet_volume: 22580
+    //     },
+    //     {
+    //       name: '#iTrustChowkidar',
+    //       url: 'http://twitter.com/search?q=%23iTrustChowkidar',
+    //       promoted_content: null,
+    //       query: '%23iTrustChowkidar',
+    //       tweet_volume: 21351
+    //     },
+    //     {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     },
+    //     {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     }, {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     }, {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     }
+    //     ],
+    //     as_of: '2019-03-16T19:26:40Z',
+    //     created_at: '2019-03-16T19:24:08Z',
+    //     locations: [{
+    //       name: 'Worldwide',
+    //       woeid: 1
+    //     }]
+    //   }
+    // }
+    // $scope.trendsArr = response.data.trends;
+    // $scope.location = response.data.locations[0].name;
 
     // Create new user
     $scope.createUser = function () {
