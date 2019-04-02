@@ -20,25 +20,27 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a href="/" class="navbar-brand">Tweeter Trends</a>
-<!-- ======================================================================= -->
-      <form ng-if="showQueryPage" class="form-inline ">
+      <!-- ======================================================================= -->
+      <form ng-if="showQueryPage && showDashboard" class="form-inline ">
         <div class="input-group">
           <input ng-model="query.text" class="search-bar" type="text" placeholder="Search">
           <div class="input-group-append">
-            <button ng-click="searchTweet()" class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+            <button ng-click="searchTweet()" class="btn btn-outline-info" type="button"><i
+                class="fas fa-search"></i></button>
           </div>
         </div>
       </form>
-<!-- ======================================================================= -->
+      <!-- ======================================================================= -->
 
-      <form class="form-inline">
+      <form class="form-inline" ng-if="user.id">
         <div class="dropdown">
           <button type="button" class="btn btn-outline-info my-2 my-sm-0 dropdown-toggle" id="dropdownProfileButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+              class="fas fa-user"></i>
             Profile</button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownProfileButton">
-            <button class="dropdown-item" ng-click="toggleProfileView()">Edit Profile</a>
-              <button class="dropdown-item" ng-click="toggleLoginView()">Sign Out</a>
+            <button class="dropdown-item" ng-click="toggleProfileView()">Edit Profile</button>
+            <button class="dropdown-item" ng-click="toggleLogoutView()">Sign Out</button>
           </div>
         </div>
       </form>
@@ -46,6 +48,7 @@
 
     <div ng-if="!user.id">
       <div class="container-fluid">
+
         <!-- =============================================================== -->
         <!-- Sign Up Page -->
         <!-- =============================================================== -->
@@ -60,11 +63,8 @@
           <div ng-include="'login.html'"></div>
         </div>
 
-
       </div>
     </div>
-
-
 
 
 
@@ -125,6 +125,17 @@
       <div ng-repeat="trend in trendsArr" class="trendCard">
         {{trend.name}}
       </div>
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- Query Tool Page -->
+      <!-- ------------------------------------------------------------------- -->
+      <div ng-if="showQueryPage" class="col-9 col-lg-10" id="Query">
+        <div ng-include="'queryTool.html'"></div>
+      </div>
+
+
+
+
     </div>
     <div id = "trendsData" class ="display-container" style="display: none">
       
@@ -151,12 +162,22 @@
       <!-- =================================================================== -->
       <!-- Profile Page View -->
       <!-- =================================================================== -->
-      <div class="container profile-page" ng-if="showProfilePage">
-        <h1 class="text-center" style="margin-bottom: 20px;">Profile</h1>
-      </div>
+      <!-- <div class="container profile-page" ng-if="showProfilePage"> -->
+        <!-- <h1 class="text-center" style="margin-bottom: 20px;">Profile</h1> -->
+      <!-- </div> -->
 
 
     </div>
+
+
+    <!-- =================================================================== -->
+    <!-- Profile Page View -->
+    <!-- =================================================================== -->
+    <div class="container profile-page" ng-if="showProfilePage">
+      <div ng-include="'profile.html'"></div>
+    </div>
+
+
 
 
 

@@ -19,15 +19,21 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.showQueryPage = false;
     $scope.showTrendsPage = false;
 
+    // Route to Dashboard
+    $scope.toggleDashboardView = function () {
+      $scope.showDashboard = true;
+      $scope.showTrendsPage = true;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
 
     // Route to Sign Up Page
     $scope.toggleSignupView = function () {
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
       $scope.showProfilePage = false;
-      $scope.showLogoutPage = false;
-      $scope.showTrendsPage = false;
-
+      $scope.showDashboard = false;
     }
 
     // Route to Login Page
@@ -35,9 +41,19 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showLoginForm = true;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
-      $scope.showLogoutPage = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
+    }
 
+    $scope.toggleLogoutView = function () {
+
+      $scope.user = {
+        first_name: "",
+        last_name: "",
+        username: "",
+        password: "",
+        id: null
+      };
+      $scope.toggleLoginView();
     }
 
     // Route to Profile Page
@@ -45,9 +61,25 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showProfilePage = true;
       $scope.showLoginForm = false;
       $scope.showSignupForm = false;
-      $scope.showLogoutPage = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
+    }
 
+    // Toggle Query Tool View
+    $scope.showQueryTool = function () {
+      $scope.showQueryPage = true;
+      $scope.showTrendsPage = false;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
+
+    // Toggle Trends Tool View
+    $scope.showTrendsTool = function () {
+      $scope.showTrendsPage = true;
+      $scope.showQueryPage = false;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
     }
 
     // Checks whether user is logged in
@@ -80,8 +112,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       password: "",
       id: null
     };
-
-
 
     // var response = {
     //   data: {
@@ -147,10 +177,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.user.id = response.data._id;
         console.log("creating user");
         // Toggle Views
-        $scope.showSignupForm = false;
-        $scope.showLoginForm = false;
-        $scope.showTrendsPage = true;
-        $scope.showDashboard = true;
+        $scope.toggleDashboardView();
       }, function (error) {
 
         console.log('Unable to create user:', error);
@@ -166,15 +193,20 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           $scope.user.last_name = response.data.last_name;
           $scope.user.username = response.data.username;
           $scope.user.id = response.data._id;
-
           // Toggle Views
-          $scope.showSignupForm = false;
-          $scope.showLoginForm = false;
-          $scope.showDashboard = true;
-          $scope.showTrendsPage = true;
-
+          $scope.toggleDashboardView();
         }, function (error) {
           console.log("Wrong Credentials");
+        });
+      }
+    }
+
+    $scope.saveUser = function () {
+      if ($scope.user.first_name != "" && $scope.user.last_name != "" && $scope.user.password != "") {
+        Trends.updateUser($scope.user).then(function (response) {
+          console.log(response);
+        }, function (error) {
+          console.log('Unable to update user:', error);
         });
       }
     }
@@ -193,11 +225,10 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       Trends.getTweets($scope.query.text).then(function (response) {
         console.log(response);
         $scope.query.tweetArray = response.data.statuses;
-      }, function(error) {
+      }, function (error) {
         console.log("Error getting query data: " + error);
       });
     }
-
 
     // Clears
 

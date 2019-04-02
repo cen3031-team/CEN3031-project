@@ -11,6 +11,12 @@ angular.module('trends', []).factory('Trends', function ($http) {
       return $http.get('/api/search/' + query);
     },
 
+    
+    // Update User
+    updateUser: function(user) {
+      return $http.put('/api/user/' + user.id, user);
+    },
+
     // Creates New User
     createUser: function (user) {
       return $http.post('/api/user', user);
@@ -115,6 +121,8 @@ options: {
     }
    
 
+
+   
   };
 
   return methods;
