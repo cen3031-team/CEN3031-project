@@ -20,79 +20,66 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a href="/" class="navbar-brand">Tweeter Trends</a>
-      <form class="form-inline">
+      <!-- ======================================================================= -->
+      <form ng-if="showQueryPage" class="form-inline ">
+        <div class="input-group">
+          <input ng-model="query.text" class="search-bar" type="text" placeholder="Search">
+          <div class="input-group-append">
+            <button ng-click="searchTweet()" class="btn btn-outline-info" type="button"><i
+                class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+      <!-- ======================================================================= -->
+
+      <form class="form-inline" ng-if="user.id">
         <div class="dropdown">
           <button type="button" class="btn btn-outline-info my-2 my-sm-0 dropdown-toggle" id="dropdownProfileButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+              class="fas fa-user"></i>
             Profile</button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownProfileButton">
-            <button class="dropdown-item" ng-click="toggleProfileView()">Edit Profile</a>
-              <button class="dropdown-item" ng-click="toggleLogoutView()">Sign Out</a>
+            <button class="dropdown-item" ng-click="toggleProfileView()">Edit Profile</button>
+            <button class="dropdown-item" ng-click="toggleLogoutView()">Sign Out</button>
           </div>
         </div>
       </form>
     </nav>
 
-    <div class="container-fluid" ng-if="!user.id">
-      
-      <!-- SIGNUP FORM -->
-      <div class="container signup-form" ng-if="showSignupForm">
-        <h1 class="text-center" style="margin-bottom: 20px;">Sign Up</h1>
-        <form>
-          <div class="form-group">
-            <label for="firstname">First Name</label>
-            <input type="text" class="form-control" id="firstnamesignup" placeholder="First Name" ng-model="user.first_name"
-              required>
-          </div>
-          <div class="form-group">
-            <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" id="lastnamesignup" placeholder="Last Name" ng-model="user.last_name"
-              required>
-          </div>
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="usernamesignup" aria-describedby="emailHelp"
-              placeholder="rob@email.com" ng-model="user.username" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="passwordsignup" placeholder="********" ng-model="user.password"
-              required>
-          </div>
-          <button ng-click="createUser()" type="submit" class="btn btn-primary">Sign Up</button>
-          <button ng-click="toggleLoginView()" type="button" class="btn btn-outline-info">Back</button>
-        </form>
+    <div ng-if="!user.id">
+      <div class="container-fluid">
+
+        <!-- =============================================================== -->
+        <!-- Sign Up Page -->
+        <!-- =============================================================== -->
+        <div class="container signup-form" ng-if="showSignupForm">
+          <div ng-include="'signup.html'"></div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- Login Form Page -->
+        <!-- =============================================================== -->
+        <div class="container login-form" ng-if="showLoginForm">
+          <div ng-include="'login.html'"></div>
+        </div>
+
       </div>
-      <!-- ---------- -->
-
-      <!-- Login Form -->
-      <div class="container login-form" ng-if="showLoginForm">
-        <h1 class="text-center" style="margin-bottom: 20px;">Login</h1>
-        <form>
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input ng-model="user.username" type="text" class="form-control" id="usernamelogin" aria-describedby="emailHelp"
-              placeholder="rob@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input ng-model="user.password" type="password" class="form-control" id="passwordlogin" placeholder="********"
-              required>
-          </div>
-          <button ng-click="loginUser()" type="submit" class="btn btn-primary">Submit</button>
-          <button ng-click="toggleSignupView()" type="button" class="btn btn-outline-info">Create Account</button>
-        </form>
-      </div>
-      <!-- ---------- -->
-
-
-
     </div>
 
-    <!-- Trends Page -->
-    <div ng-if="showTrendsPage" class="row main-container">
+
+
+    <!-- =================================================================== -->
+    <!-- Main Dashboard -->
+    <!-- =================================================================== -->
+    <div ng-if="showDashboard" class="row main-container">
+
       <!-- Filter Options like location etc here -->
       <div class="col-3 col-lg-2 sidebar">
+        <!-- Menu Buttons for switching tools -->
+        <button ng-click="showQueryTool()" class="btn btn-secondary btn-block tool-menu" style="margin-top: 30px;">Query
+          Tool</button>
+        <button ng-click="showTrendsTool()" class="btn btn-secondary btn-block tool-menu">Trends Tool</button>
+
         <div class="filter-container">
           <h6>Narrow By Location</h6>
           <select class="custom-select">
@@ -117,52 +104,40 @@
                 </div>
       </div>
     </div>-->
-      <div class="col-9 col-lg-9" id="Trending">
-        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
-        <button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('trends','trendsData')">See
-            Data {{location}}</a></button>
-        <!--<button type="button" class="btn btn-light">Test</button>-->
-        <div id="trends" class="container">
 
 
-          <div class="col-9 col-lg-10">
-            <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
-
-            <div class="display-container">
-              <!-- Repeat Trend topics for each trend in array -->
-              <div ng-repeat="trend in trendsArr" class="trendCard">
-                {{trend.name}}
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- ------------------------------------------------------------------- -->
+      <!-- Trending Tool Page -->
+      <!-- ------------------------------------------------------------------- -->
+      <div ng-if="showTrendsPage" class="col-9 col-lg-9" id="Trending">
+        <div ng-include="'trends.html'"></div>
       </div>
-    </div>
-    <!-- --------- -->
 
-    <!-- Profile Page -->
+      <!-- ------------------------------------------------------------------- -->
+      <!-- Query Tool Page -->
+      <!-- ------------------------------------------------------------------- -->
+      <div ng-if="showQueryPage" class="col-9 col-lg-10" id="Query">
+        <div ng-include="'queryTool.html'"></div>
+      </div>
+
+
+
+
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- Profile Page View -->
+    <!-- =================================================================== -->
     <div class="container profile-page" ng-if="showProfilePage">
-      <h1 class="text-center" style="margin-bottom: 20px;">Profile</h1>
-      <form>
-        <div class="form-group">
-          <label for="firstname">First Name</label>
-          <input type="text" class="form-control" id="firstname" placeholder="{{user.first_name}}" ng-model="user.first_name">
-        </div>
-        <div class="form-group">
-          <label for="lastname">Last Name</label>
-          <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="user.last_name">
-        </div>
-        <div class="form-group">
-          <label for="username">Password</label>
-          <input type="text" class="form-control" id="password" placeholder="********"
-            ng-model="user.password">
-        </div>
-        <button ng-click="saveUser()" type="button" class="btn btn-primary">Save</button>
-        <button ng-click="toggleTrendsView()" type="button" class="btn btn-outline-info">Back</button>
-      </form>
+      <div ng-include="'profile.html'"></div>
     </div>
-    <!-- ---------- -->
 
+
+
+
+
+
+    <!-- Add all html code above this line! -->
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -181,6 +156,7 @@
   <script src="js/app.js"></script>
   <script src="js/factories/tweeterFactory.js"></script>
   <script src="js/controllers/tweeterController.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,25 @@
+<h1 class="text-center" style="margin-bottom: 20px;">Sign Up</h1>
+<form>
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" class="form-control" id="firstnamesignup" placeholder="First Name" ng-model="user.first_name"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="lastnamesignup" placeholder="Last Name" ng-model="user.last_name"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="usernamesignup" aria-describedby="emailHelp" placeholder="rob@email.com"
+      ng-model="user.username" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="passwordsignup" placeholder="********" ng-model="user.password"
+      required>
+  </div>
+  <button ng-click="createUser()" type="button" class="btn btn-primary">Sign Up</button>
+  <button ng-click="toggleLoginView()" type="button" class="btn btn-outline-info">Back</button>
+</form>

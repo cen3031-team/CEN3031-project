@@ -4,6 +4,8 @@ const User = require('../models/user.server.model'),
 // Create a new user
 exports.createUser = (req, res) => {
   let newUser = new User(req.body);
+  console.log("backend create user");
+  console.log(req.body.user);
   newUser.save((err) => {
     if (err) {
       console.log(err);

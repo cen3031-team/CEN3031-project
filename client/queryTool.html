@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h4 class="query-subtitle" ng-if="query.tweetArray.length == 0">Use the search bar above to lookup popular tweets</h4>
+  <div ng-if="query.tweetArray.length != 0" class="tweet-container container-fluid">
+    <h6 class="query-subtitle">Showing results for "{{query.text}}"</h6>
+    <div ng-repeat="tweet in query.tweetArray" class="tweet-card">
+      <div class="tweetUser-section">
+        <div class="row container-fluid align-items-center">
+          <div class="col-4">
+            <img ng-src="{{tweet.user.profile_image_url}}" class="tweet-img">
+
+          </div>
+          <div class="col-8">
+            <h4 class="tweetUser-name">{{tweet.user.screen_name}}</h4>
+
+          </div>
+        </div>
+        <hr>
+        <p class="float-left"><i class="fas fa-users"></i> Followers: {{tweet.user.followers_count}}<br></p>
+        <p class="float-left"><i class="far fa-grin-squint"></i> Friends: {{tweet.user.friends_count}}<br></p>
+        <p class="float-left"><i class="fas fa-map-marker-alt"></i> Location: {{tweet.user.location}}<br></p>
+
+      </div>
+      <div class="tweetText-section">
+        <blockquote class="blockquote text-right">
+          <p class="mb-0">{{tweet.full_text}}</p>
+          <footer><span class="badge badge-danger"><i class="fas fa-heart"></i> {{tweet.favorite_count}}</span> <span
+              class="badge badge-primary"><i class="fas fa-retweet"></i> {{tweet.retweet_count}}</span></footer>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</div>

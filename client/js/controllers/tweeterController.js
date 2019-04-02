@@ -1,35 +1,45 @@
 angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
   function ($scope, Trends) {
-    // /* Get all the trends, then bind it to the scope */
-    // Trends.getAll().then(function (response) {
-    //   $scope.trendsArr = response.data.trends;
-    //   $scope.location = response.data.locations[0].name;
-    //   // console.log($scope.trends);
-    // }, function (error) {
-    //   console.log('Unable to retrieve listings:', error);
-    // });
+    /* Get all the trends, then bind it to the scope */
+    Trends.getAll().then(function (response) {
+      $scope.trendsArr = response.data.trends;
+      $scope.location = response.data.locations[0].name;
+      // console.log($scope.trends);
+    }, function (error) {
+      console.log('Unable to retrieve listings:', error);
+    });
 
     // Frontend Toggles
     $scope.showLoginForm = true;
     $scope.showSignupForm = false;
     $scope.showProfilePage = false;
+    $scope.showDashboard = false;
+    $scope.showQueryPage = false;
     $scope.showTrendsPage = false;
 
+    // Route to Dashboard
+    $scope.toggleDashboardView = function () {
+      $scope.showDashboard = true;
+      $scope.showTrendsPage = true;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
 
     // Route to Sign Up Page
     $scope.toggleSignupView = function () {
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
       $scope.showProfilePage = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
     }
-    
+
     // Route to Login Page
     $scope.toggleLoginView = function () {
       $scope.showLoginForm = true;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
     }
 
     $scope.toggleLogoutView = function () {
@@ -49,11 +59,22 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showProfilePage = true;
       $scope.showLoginForm = false;
       $scope.showSignupForm = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
     }
 
-    $scope.toggleTrendsView = function () {
+    // Toggle Query Tool View
+    $scope.showQueryTool = function () {
+      $scope.showQueryPage = true;
+      $scope.showTrendsPage = false;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
+
+    // Toggle Trends Tool View
+    $scope.showTrendsTool = function () {
       $scope.showTrendsPage = true;
+      $scope.showQueryPage = false;
       $scope.showLoginForm = false;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
@@ -73,68 +94,59 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       id: null
     };
 
-    // Fake user object
-    $scope.fakeuser = {
-      first_name: $scope.user.first_name,
-      last_name: $scope.user.last_name,
-      username: $scope.user.username,
-      password: $scope.user.password,
-      id: $scope.user.id
-    };
-
-    var response = {
-      data: {
-        trends: [{
-            name: '#ENGvSCO',
-            url: 'http://twitter.com/search?q=%23ENGvSCO',
-            promoted_content: null,
-            query: '%23ENGvSCO',
-            tweet_volume: 22580
-          },
-          {
-            name: '#iTrustChowkidar',
-            url: 'http://twitter.com/search?q=%23iTrustChowkidar',
-            promoted_content: null,
-            query: '%23iTrustChowkidar',
-            tweet_volume: 21351
-          },
-          {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          },
-          {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          }, {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          }, {
-            name: '#TeamGOT7',
-            url: 'http://twitter.com/search?q=%23TeamGOT7',
-            promoted_content: null,
-            query: '%23TeamGOT7',
-            tweet_volume: 3729973
-          }
-        ],
-        as_of: '2019-03-16T19:26:40Z',
-        created_at: '2019-03-16T19:24:08Z',
-        locations: [{
-          name: 'Worldwide',
-          woeid: 1
-        }]
-      }
-    }
-    $scope.trendsArr = response.data.trends;
-    $scope.location = response.data.locations[0].name;
+    // var response = {
+    //   data: {
+    //     trends: [{
+    //       name: '#ENGvSCO',
+    //       url: 'http://twitter.com/search?q=%23ENGvSCO',
+    //       promoted_content: null,
+    //       query: '%23ENGvSCO',
+    //       tweet_volume: 22580
+    //     },
+    //     {
+    //       name: '#iTrustChowkidar',
+    //       url: 'http://twitter.com/search?q=%23iTrustChowkidar',
+    //       promoted_content: null,
+    //       query: '%23iTrustChowkidar',
+    //       tweet_volume: 21351
+    //     },
+    //     {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     },
+    //     {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     }, {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     }, {
+    //       name: '#TeamGOT7',
+    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
+    //       promoted_content: null,
+    //       query: '%23TeamGOT7',
+    //       tweet_volume: 3729973
+    //     }
+    //     ],
+    //     as_of: '2019-03-16T19:26:40Z',
+    //     created_at: '2019-03-16T19:24:08Z',
+    //     locations: [{
+    //       name: 'Worldwide',
+    //       woeid: 1
+    //     }]
+    //   }
+    // }
+    // $scope.trendsArr = response.data.trends;
+    // $scope.location = response.data.locations[0].name;
 
     // Create new user
     $scope.createUser = function () {
@@ -144,9 +156,9 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.user.last_name = response.data.last_name;
         $scope.user.username = response.data.username;
         $scope.user.id = response.data._id;
-
+        console.log("creating user");
         // Toggle Views
-        $scope.toggleTrendsView();
+        $scope.toggleDashboardView();
       }, function (error) {
         console.log('Unable to create user:', error);
       });
@@ -154,31 +166,53 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     // Login User
     $scope.loginUser = function () {
-
       if ($scope.user.username != "" && $scope.user.password != "") {
         Trends.loginUser($scope.user.username).then(function (response) {
-          console.log(response);
           // Save user details
           $scope.user.first_name = response.data.first_name;
           $scope.user.last_name = response.data.last_name;
           $scope.user.username = response.data.username;
           $scope.user.id = response.data._id;
-
           // Toggle Views
-          $scope.toggleTrendsView();
+          $scope.toggleDashboardView();
         }, function (error) {
           console.log("Wrong Credentials");
         });
       }
     }
 
-    $scope.saveUser = function() {
-      Trends.updateUser($scope.user).then(function (response) {
+    $scope.saveUser = function () {
+      if ($scope.user.first_name != "" && $scope.user.last_name != "" && $scope.user.password != "") {
+        Trends.updateUser($scope.user).then(function (response) {
+          console.log(response);
+        }, function (error) {
+          console.log('Unable to update user:', error);
+        });
+      }
+    }
+
+    // =========================================================================
+    // Query Tool
+    // =========================================================================
+    $scope.query = {
+      text: "",
+      tweetArray: []
+    }
+
+    // Query search button event handler
+    $scope.searchTweet = function () {
+
+      Trends.getTweets($scope.query.text).then(function (response) {
         console.log(response);
+        $scope.query.tweetArray = response.data.statuses;
       }, function (error) {
-        console.log('Unable to update user:', error);
+        console.log("Error getting query data: " + error);
       });
     }
+
+    // Clears
+
+    // =========================================================================
 
     // $scope.detailedInfo = undefined;
 
