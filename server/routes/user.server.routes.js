@@ -2,6 +2,7 @@ const userController = require('../controllers/user.server.controller'),
       express = require('express'),
       router = express.Router();
 
+router.route('/login').login
 router.route('/:username').get(userController.getUserByUsername);
 router.route('/:username').delete(userController.deleteUser);
 

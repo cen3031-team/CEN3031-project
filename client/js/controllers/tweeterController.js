@@ -156,12 +156,20 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         console.log('Unable to create user:', error);
       });
     };
+    
+    // Login form data
+    $scope.credentials = {
+      username: "",
+      password: ""
+    }
 
     // Login User
     $scope.loginUser = function () {
-      if ($scope.user.username != "" && $scope.user.password != "") {
-        Trends.loginUser($scope.user.username).then(function (response) {
+      if ($scope.credentials.username != "" && $scope.credentials.password != "") {
+
+        Trends.loginUser($scope.credentials).then(function (response) {
           // Save user details
+          console.log(response);
           $scope.user.first_name = response.data.first_name;
           $scope.user.last_name = response.data.last_name;
           $scope.user.username = response.data.username;
