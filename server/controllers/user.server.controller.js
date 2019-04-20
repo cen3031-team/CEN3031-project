@@ -33,23 +33,29 @@ exports.getUserByUsername = (req, res) => {
 
 // Update user with new info
 exports.updateUser = (req, res) => {
-  const user = req.user;
-  const updatedUser = req.body.updatedUser;
-  user.first_name = updatedUser.first_name;
-  user.last_name = updatedUser.last_name;
-  user.password = updatedUser.password;
-
-  user.save((err) => {
+  // const user = req.user;
+  const id = req.params.userId;
+  console.log(id);
+  User.findById(id, (err, user) => {
     if (err) res.status(400).send(err);
-    res.json(user);
+    const updatedUser = req.body;
+    user.first_name = updatedUser.first_name;
+    user.last_name = updatedUser.last_name;
+    user.password = updatedUser.password;
+    console.log("updateUser called");
+    user.save((err) => {
+      if (err) res.status(400).send(err);
+      res.json(user);
+    });
   });
+
 }
 
 // Delete User
 exports.deleteUser = (req, res) => {
   const delUser = req.params.username;
   if (!delUser) res.status(404).send('User not found');
-  User.findOneAndRemove({username: delUser}, (err, user) => {
+  User.findOneAndRemove({ username: delUser }, (err, user) => {
     if (err) res.status(400).send(err);
     res.json(user);
   });

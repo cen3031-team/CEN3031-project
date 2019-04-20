@@ -3,9 +3,8 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     /* Get all the trends, then bind it to the scope */
     Trends.getAll().then(function (response) {
       $scope.trendsArr = response.data.trends;
-      
       $scope.location = response.data.locations[0].name;
-     
+
       // console.log($scope.trends);
     }, function (error) {
       console.log('Unable to retrieve listings:', error);
@@ -19,15 +18,21 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.showQueryPage = false;
     $scope.showTrendsPage = false;
 
+    // Route to Dashboard
+    $scope.toggleDashboardView = function () {
+      $scope.showDashboard = true;
+      $scope.showTrendsPage = true;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
 
     // Route to Sign Up Page
     $scope.toggleSignupView = function () {
       $scope.showSignupForm = true;
       $scope.showLoginForm = false;
       $scope.showProfilePage = false;
-      $scope.showLogoutPage = false;
-      $scope.showTrendsPage = false;
-
+      $scope.showDashboard = false;
     }
 
     // Route to Login Page
@@ -35,9 +40,19 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showLoginForm = true;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
-      $scope.showLogoutPage = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
+    }
 
+    $scope.toggleLogoutView = function () {
+
+      $scope.user = {
+        first_name: "",
+        last_name: "",
+        username: "",
+        password: "",
+        id: null
+      };
+      $scope.toggleLoginView();
     }
 
     // Route to Profile Page
@@ -45,9 +60,26 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showProfilePage = true;
       $scope.showLoginForm = false;
       $scope.showSignupForm = false;
-      $scope.showLogoutPage = false;
-      $scope.showTrendsPage = false;
+      $scope.showDashboard = false;
+    }
 
+    // Toggle Query Tool View
+    $scope.showQueryTool = function () {
+      $scope.showQueryPage = true;
+      $scope.showTrendsPage = false;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
+    }
+
+    // Toggle Trends Tool View
+    $scope.showTrendsTool = function () {
+      console.log("trying trends");
+      $scope.showTrendsPage = true;
+      $scope.showQueryPage = false;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
+      $scope.showProfilePage = false;
     }
 
     // Checks whether user is logged in
@@ -80,8 +112,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       password: "",
       id: null
     };
-
-
 
     // var response = {
     //   data: {
@@ -147,16 +177,13 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.user.id = response.data._id;
         console.log("creating user");
         // Toggle Views
-        $scope.showSignupForm = false;
-        $scope.showLoginForm = false;
-        $scope.showTrendsPage = true;
-        $scope.showDashboard = true;
+        $scope.toggleDashboardView();
       }, function (error) {
 
         console.log('Unable to create user:', error);
       });
     };
-    
+
     // Login form data
     $scope.credentials = {
       username: "",
@@ -178,15 +205,9 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           $scope.user.last_name = response.data.last_name;
           $scope.user.username = response.data.username;
           $scope.user.id = response.data._id;
-
           // Toggle Views
-          $scope.showSignupForm = false;
-          $scope.showLoginForm = false;
-          $scope.showDashboard = true;
-          $scope.showTrendsPage = true;
-
+          $scope.toggleDashboardView();
         }, function (error) {
-          // console.log("Error: " + error);
           $scope.missingCreds = false;
           $scope.wrongCreds = true;
         });
@@ -194,6 +215,15 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       else {
         $scope.missingCreds = true;
         $scope.wrongCreds = false;
+      }
+    }
+
+    $scope.saveUser = function () {
+      if ($scope.user.first_name != "" && $scope.user.last_name != "" && $scope.user.password != "") {
+        Trends.updateUser($scope.user).then(function (response) {
+        }, function (error) {
+          console.log('Unable to update user:', error);
+        });
       }
     }
 
@@ -205,59 +235,28 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       tweetArray: []
     }
 
+    $scope.showHelpText = false;
+    $scope.helpText = "Unable to find related tweet. Please try another query!";
+    $scope.returnedQuery = "";
     // Query search button event handler
     $scope.searchTweet = function () {
-
+      $scope.query.tweetArray.length = 0;
       Trends.getTweets($scope.query.text).then(function (response) {
-        $scope.query.tweetArray = response.data.statuses;
-      }, function(error) {
+        console.log(response.data);
+        if (response.data.statuses.length == 0) {
+          $scope.showHelpText = true;
+        } else {
+          $scope.showHelpText = false;
+          $scope.returnedQuery = response.data.search_metadata.query;
+          $scope.query.tweetArray = response.data.statuses;
+        }
+      }, function (error) {
         console.log("Error getting query data: " + error);
       });
     }
 
 
-    // Clears
-
     // =========================================================================
 
-    // $scope.detailedInfo = undefined;
-
-    // $scope.addListing = function () {
-    //   /**
-    //   *Save the article using the Listings factory. If the object is successfully 
-    //   saved redirect back to the list page. Otherwise, display the error
-    //  */
-    //   if ($scope.newListing == undefined) console.log("Unable to add empty listing.");
-    //   else {
-    //     Listings.create($scope.newListing).then(function (response) {
-    //       console.log("Successfully added " + response.data);
-    //       $scope.listings.push(response.data);
-    //     }), function (error) {
-    //       console.log(error);
-    //     }
-    //   }
-    // }
-
-
-    // $scope.deleteListing = function (id) {
-    //   /**
-    //   Delete the article using the Listings factory. If the removal is successful, 
-    //   navigate back to 'listing.list'. Otherwise, display the error. 
-    //   */
-    //   Listings.delete(id).then(function (response) {
-    //     console.log(response.data);
-    //     let delIndex = 0;
-    //     $scope.listings.forEach((listing, index) => {
-    //       if (listing.code == response.data.code) delIndex = index;
-    //     });
-    //     $scope.listings.splice(delIndex, 1);
-    //   }), function (error) {
-    //     console.log("Unable to delete listing", error);
-    //   }
-    // };
-
-    // $scope.showDetails = function (index) {
-    //   $scope.detailedInfo = $scope.listings[index];
-    // };
   }
 ]);

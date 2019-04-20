@@ -1,7 +1,12 @@
 <div class="container-fluid">
+
+  <div style="margin:30px;" ng-if="showHelpText" class="alert alert-warning" role="alert">
+    Unable to find related tweets. Please try another query!
+  </div>
+
   <h4 class="query-subtitle" ng-if="query.tweetArray.length == 0">Use the search bar above to lookup popular tweets</h4>
   <div ng-if="query.tweetArray.length != 0" class="tweet-container container-fluid">
-    <h6 class="query-subtitle">Showing results for {{query.text}}</h6>
+    <h6 class="query-subtitle">Showing results for {{returnedQuery}}</h6>
     <div ng-repeat="tweet in query.tweetArray" class="tweet-card">
       <div class="tweetUser-section">
         <div class="row container-fluid align-items-center">
@@ -15,8 +20,8 @@
           </div>
         </div>
         <hr>
-        <p class="float-left"><i class="fas fa-users"></i> Followers: {{tweet.user.followers_count}}<br></p>
-        <p class="float-left"><i class="far fa-grin-squint"></i> Friends {{tweet.user.friends_count}}<br></p>
+        <p class="float-left"><i class="fas fa-users"></i> <strong>Followers</strong> {{tweet.user.followers_count}}<br></p>
+        <p class="float-left"><i class="far fa-grin-squint"></i> <strong>Friends</strong> {{tweet.user.friends_count}}<br></p>
         <p class="float-left"><i class="fas fa-map-marker-alt"></i> Location {{tweet.user.location}}<br></p>
 
       </div>

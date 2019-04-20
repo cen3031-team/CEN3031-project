@@ -7,11 +7,11 @@ router.route('/login').post(passport.authenticate('local'), userController.login
 router.route('/:username').get(userController.getUserByUsername);
 router.route('/:username').delete(userController.deleteUser);
 
-router.route(':/userId').put(userController.updateUser);
+router.route('/:userId').put(userController.updateUser);
 
 router.route('/').post(userController.createUser);
 
 // Middleware gets triggered whenever a req is made with 'userId' param
-router.param('userId', userController.getUserById);
+// router.param('userId', userController.getUserById);
 
 module.exports = router;

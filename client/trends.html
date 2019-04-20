@@ -7,23 +7,23 @@
     <!--<h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>-->
 
     <div class="display-container" id="trending">
-      
+
       <!-- Repeat Trend topics for each trend in array -->
       <div ng-repeat="trend in trendsArr" class="trendCard">
         {{trend.name}}
       </div>
     </div>
-    <div id = "trendsData" class ="display-container" style="display: none">
-      
-        <button type="button" class="btn btn-light" onclick="toggle(this)"><a href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar Graph</a></button>
-       <canvas id="pieChart"></canvas>
-       <canvas id="barChart" style="display:none"></canvas >
-       <!-- <canvas id="bubbleChart" style ="display:none"> </canvas>-->
+    <div id="trendsData" class="display-container" style="display: none">
+
+      <button type="button" class="btn btn-light" onclick="toggle(this)"><a
+          href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar Graph</a></button>
+      <canvas id="pieChart"></canvas>
+      <canvas id="barChart" style="display:none"></canvas>
+      <!-- <canvas id="bubbleChart" style ="display:none"> </canvas>-->
 
 
 
-    
+
     </div>
   </div>
 </div>
-
