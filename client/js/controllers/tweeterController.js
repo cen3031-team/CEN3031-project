@@ -221,6 +221,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.saveUser = function () {
       if ($scope.user.first_name != "" && $scope.user.last_name != "" && $scope.user.password != "") {
         Trends.updateUser($scope.user).then(function (response) {
+          console.log(response);
         }, function (error) {
           console.log('Unable to update user:', error);
         });

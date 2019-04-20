@@ -34,6 +34,7 @@ exports.getUserByUsername = (req, res) => {
 // Update user with new info
 exports.updateUser = (req, res) => {
   // const user = req.user;
+  console.log("updating user");
   const id = req.params.userId;
   console.log(id);
   User.findById(id, (err, user) => {
@@ -42,7 +43,6 @@ exports.updateUser = (req, res) => {
     user.first_name = updatedUser.first_name;
     user.last_name = updatedUser.last_name;
     user.password = updatedUser.password;
-    console.log("updateUser called");
     user.save((err) => {
       if (err) res.status(400).send(err);
       res.json(user);
