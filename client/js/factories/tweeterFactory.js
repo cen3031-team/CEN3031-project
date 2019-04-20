@@ -18,7 +18,7 @@ angular.module('trends', []).factory('Trends', function ($http) {
 
     // Login User
     loginUser: function (credentials) {
-      return $http.get('/api/user/login', credentials);
+      return $http.post('/api/user/login', credentials);
     },
 
     renderPieChart: function (trendsArr) {

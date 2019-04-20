@@ -1,10 +1,17 @@
-const User = require('../models/user.server.model'),
-  mongoose = require('mongoose');
+const User = require('../models/user.server.model');
 
+  // Login user
+exports.loginUser = (req, res) => {
+  if (req.user) {
+    console.log(req.user);
+    res.json(req.user);
+  } else {
+    res.status(400).send("Invalid Credentials");
+  }
+}
 // Create a new user
 exports.createUser = (req, res) => {
   let newUser = new User(req.body);
-  console.log("backend create user");
   console.log(req.body.user);
   newUser.save((err) => {
     if (err) {
@@ -19,8 +26,6 @@ exports.createUser = (req, res) => {
 // Find user by username
 exports.getUserByUsername = (req, res) => {
   User.findOne({username: req.params.username}, (error, user) => {
-    console.log(user)
-    console.log(req.params.username);
     if (error || user == null) res.status(400).send(error);
     else res.json(user);
   });
@@ -56,5 +61,27 @@ exports.getUserById = (req, res, next ,id) => {
     if (err) res.status(400).send(err);
     req.user = user;
     next();
+  });
+}
+
+// Auth middleware: get user by id
+exports.findById = (id, callback) => {
+  User.findById(id, (err, user) => {
+    if (err) {
+      callback(new Error('User ' + id + ' not found.'));
+    } else {
+      callback(null, user);
+    }
+  });
+}
+
+// Auth middleware: get user by username
+exports.findByUsername = (username, callback) => {
+  User.findOne({username: username}, (error, user) => {
+    if (error) {
+      return callback(null, null);
+    } else {
+      return callback(null, user);
+    }
   });
 }

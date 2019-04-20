@@ -6,7 +6,11 @@ var path = require('path'),
   config = require('./config'),
   trendsRouter = require('../routes/trends.server.routes'),
   userRouter = require('../routes/user.server.routes'),
-  queryRouter = require('../routes/queries.server.routes');
+  queryRouter = require('../routes/queries.server.routes'),
+  passport = require('passport'),
+  Strategy = require('passport-local').Strategy,
+  passportAuth =  require('connect-ensure-login'),
+  userController = require('../controllers/user.server.controller');
 
 module.exports.init = function () {
   //connect to database
@@ -14,19 +18,63 @@ module.exports.init = function () {
     useMongoClient: true
   });
 
+  // Init Passport
+  passport.use(new Strategy(
+    function (username, password, cb) {
+      userController.findByUsername(username, function (err, user) {
+        if (err) {
+          return cb(err);
+        }
+        if (!user) {
+          return cb(null, false);
+        }
+        if (user.password != password) {
+          return cb(null, false);
+        }
+        return cb(null, user);
+      });
+    }
+  ));
+
+  // Config passport session
+  passport.serializeUser(function (user, cb) {
+    cb(null, user._id);
+  });
+
+  passport.deserializeUser(function (id, cb) {
+    userController.findById(id, function (err, user) {
+      if (err) return cb(err);
+      cb(null, user);
+    });
+  });
+
+  const isLoggedin = function() {
+    if (req.user) {
+      return true;
+    }
+    return false;
+  }
+
   //initialize app
   var app = express();
 
   //enable request logging for development debugging
   app.use(morgan('dev'));
 
+  app.use(require('cookie-parser')());
+
   //body parsing middleware 
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
   /**
   Serve static files */
   app.use(express.static('client'));
 
+  // Session handling
+  app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   /**
   Use the listings router for requests to the api */
@@ -34,7 +82,7 @@ module.exports.init = function () {
 
   //Query router
   app.use('/api/search', queryRouter);
-  
+
   // User router
   app.use('/api/user', userRouter);
 

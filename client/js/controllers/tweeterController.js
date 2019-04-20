@@ -163,13 +163,17 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       password: ""
     }
 
+    $scope.wrongCreds = false;
+    $scope.missingCreds = false;
+
     // Login User
     $scope.loginUser = function () {
       if ($scope.credentials.username != "" && $scope.credentials.password != "") {
 
         Trends.loginUser($scope.credentials).then(function (response) {
+          $scope.wrongCreds = false;
+          $scope.missingCreds = false;
           // Save user details
-          console.log(response);
           $scope.user.first_name = response.data.first_name;
           $scope.user.last_name = response.data.last_name;
           $scope.user.username = response.data.username;
@@ -182,8 +186,14 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
           $scope.showTrendsPage = true;
 
         }, function (error) {
-          console.log("Wrong Credentials");
+          // console.log("Error: " + error);
+          $scope.missingCreds = false;
+          $scope.wrongCreds = true;
         });
+      }
+      else {
+        $scope.missingCreds = true;
+        $scope.wrongCreds = false;
       }
     }
 

@@ -1,8 +1,9 @@
 const userController = require('../controllers/user.server.controller'),
       express = require('express'),
+      passport = require('passport'),
       router = express.Router();
 
-router.route('/login').login
+router.route('/login').post(passport.authenticate('local'), userController.loginUser);
 router.route('/:username').get(userController.getUserByUsername);
 router.route('/:username').delete(userController.deleteUser);
 
