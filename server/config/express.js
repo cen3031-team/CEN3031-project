@@ -1,15 +1,14 @@
-var path = require('path'),
-  express = require('express'),
+var express = require('express'),
   mongoose = require('mongoose'),
   morgan = require('morgan'),
   bodyParser = require('body-parser'),
   config = require('./config'),
   trendsRouter = require('../routes/trends.server.routes'),
   userRouter = require('../routes/user.server.routes'),
+  locationRouter = require('../routes/locations.server.routes'),
   queryRouter = require('../routes/queries.server.routes'),
   passport = require('passport'),
   Strategy = require('passport-local').Strategy,
-  passportAuth =  require('connect-ensure-login'),
   userController = require('../controllers/user.server.controller');
 
 module.exports.init = function () {
@@ -48,13 +47,6 @@ module.exports.init = function () {
     });
   });
 
-  const isLoggedin = function() {
-    if (req.user) {
-      return true;
-    }
-    return false;
-  }
-
   //initialize app
   var app = express();
 
@@ -72,13 +64,15 @@ module.exports.init = function () {
   app.use(express.static('client'));
 
   // Session handling
-  app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+  app.use(require('express-session')({ secret: 'nyancat', resave: false, saveUninitialized: false }));
   app.use(passport.initialize());
   app.use(passport.session());
 
-  /**
-  Use the listings router for requests to the api */
+  // Trends router
   app.use('/api/trends', trendsRouter);
+
+  // Location router
+  app.use('/api/location', locationRouter);
 
   //Query router
   app.use('/api/search', queryRouter);

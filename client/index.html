@@ -82,29 +82,11 @@
 
         <div class="filter-container">
           <h6>Narrow By Location</h6>
-          <select class="custom-select">
-            <option selected>Select Country</option>
-            <option value="1">US</option>
-            <option value="2">UK</option>
-            <option value="3">Canada</option>
-            <option value="4">Australia</option>
-
+          <select ng-model="selectedLocation.woeid" ng-options="loc.woeid as loc.name for loc in locationArr" class="custom-select">
           </select>
+          <button style="margin-top:20px;" class="btn btn-primary" type="button" ng-click="filterTrendsByLoc()">Filter</button>
         </div>
       </div>
-      <!-- Container for Trends and Topics -->
-
-      <!--<div class="col-9 col-lg-9"id = "TopTweets" style="display:none">
-          <h3 class="subheading"><i class="fas fa-chart-line" ></i> Trending Tweets</h3>
-          <div class="container" >
-              <div ng-repeat=" in " class="trendCard">
-           
-                  
-                  
-                </div>
-      </div>
-    </div>-->
-
 
       <!-- ------------------------------------------------------------------- -->
       <!-- Trending Tool Page -->

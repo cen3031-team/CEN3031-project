@@ -2,8 +2,13 @@ angular.module('trends', []).factory('Trends', function ($http) {
 
   var methods = {
     // Returns All Global Trends
-    getAll: function () {
-      return $http.get('/api/trends');
+    getAll: function (woeid) {
+      return $http.get('/api/trends/' + woeid);
+    },
+
+    // Get location objects
+    getLocation: function () {
+      return $http.get('/api/location');
     },
 
     // Search popular tweets
