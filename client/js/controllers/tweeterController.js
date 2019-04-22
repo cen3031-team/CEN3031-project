@@ -3,6 +3,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     /* Get all the trends, then bind it to the scope */
     Trends.getAll().then(function (response) {
       $scope.trendsArr = response.data.trends;
+      $scope.trendsArr.sort((a, b) => (a.tweet_volume < b.tweet_volume) ? 1 : (a.tweet_volume === b.tweet_volume) ? ((a.name < b.name) ? 1 : -1) : -1 );
       
       $scope.location = response.data.locations[0].name;
      

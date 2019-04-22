@@ -122,8 +122,9 @@
     <div class="display-container" id="trending" style="display:block">
       
       <!-- Repeat Trend topics for each trend in array -->
-      <div ng-repeat="trend in trendsArr" class="trendCard">
-        {{trend.name}}
+      <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null" >
+        <a href="{{ trend.url }}" style="color: black">{{trend.name}}</a>
+  
       </div>
 
       <!-- ------------------------------------------------------------------- -->
