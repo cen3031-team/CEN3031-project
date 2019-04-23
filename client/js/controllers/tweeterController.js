@@ -37,6 +37,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showTrendsPage = true;
       $scope.showQueryPage = false;
       $scope.showLoginForm = false;
+      $scope.showQueryPage = false;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
     }
@@ -124,21 +125,27 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       id: null
     };
 
+    $scope.missingForm = false;
+
     // Create new user
     $scope.createUser = function () {
+      if ($scope.user.username != "" && $scope.user.first_name != "" && $scope.user.last_name != "" && $scope.user.password != "") {
+        $scope.missingForm = false;
+        Trends.createUser($scope.user).then(function (response) {
+          $scope.user.first_name = response.data.first_name;
+          $scope.user.last_name = response.data.last_name;
+          $scope.user.username = response.data.username;
+          $scope.user.id = response.data._id;
+          console.log("creating user");
+          // Toggle Views
+          $scope.toggleDashboardView();
+        }, function (error) {
+          console.log('Unable to create user:', error);
+        });
+      } else {
+        $scope.missingForm = true;
+      }
 
-      Trends.createUser($scope.user).then(function (response) {
-        $scope.user.first_name = response.data.first_name;
-        $scope.user.last_name = response.data.last_name;
-        $scope.user.username = response.data.username;
-        $scope.user.id = response.data._id;
-        console.log("creating user");
-        // Toggle Views
-        $scope.toggleDashboardView();
-      }, function (error) {
-
-        console.log('Unable to create user:', error);
-      });
     };
 
     // Login form data
@@ -175,13 +182,18 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       }
     }
 
+    
+
     $scope.saveUser = function () {
       if ($scope.user.first_name != "" && $scope.user.last_name != "" && $scope.user.password != "") {
+        $scope.missingForm = false;
         Trends.updateUser($scope.user).then(function (response) {
           console.log(response);
         }, function (error) {
           console.log('Unable to update user:', error);
         });
+      } else {
+        $scope.missingForm = true;
       }
     }
 
@@ -227,6 +239,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         if (response.data.statuses.length == 0) {
           $scope.showHelpText = true;
         } else {
+          console.log(response.data);
           $scope.showHelpText = false;
           $scope.returnedQuery = response.data.search_metadata.query;
           $scope.query.tweetArray = response.data.statuses;
