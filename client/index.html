@@ -23,13 +23,15 @@
       <a href="/" class="navbar-brand"><i class="fab fa-twitter"></i> Tweeter Trends</a>
       <!-- ======================================================================= -->
       <form ng-if="showQueryPage && showDashboard" class="form-inline ">
-          <div class="input-group sort-toggle">
-              <div class="input-group-prepend">
-                <label class="bg-dark text-info input-group-text" for="inputGroupSelect"><i class="fas fa-sort-amount-up"></i>&nbsp;Sort By</label>
-              </div>
-              <select ng-model="selectedSort.option" ng-options="option for option in sortOptions.options" class="custom-select" id="inputGroupSelect">
-              </select>
-            </div>
+        <div class="input-group sort-toggle">
+          <div class="input-group-prepend">
+            <label class="bg-dark text-info input-group-text" for="inputGroupSelect"><i
+                class="fas fa-sort-amount-up"></i>&nbsp;Sort By</label>
+          </div>
+          <select ng-model="selectedSort.option" ng-options="option for option in sortOptions.options"
+            class="custom-select" id="inputGroupSelect">
+          </select>
+        </div>
         <div class="input-group">
           <input ng-model="query.text" class="search-bar" type="text" placeholder="Search">
           <div class="input-group-append">
@@ -40,15 +42,17 @@
 
       </form>
       <!-- ======================================================================= -->
-
+      <!--Profile Dropdown Button-->
       <form class="form-inline" ng-if="user.id">
         <div class="dropdown">
           <button type="button" class="btn btn-outline-info my-2 my-sm-0 dropdown-toggle" id="dropdownProfileButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
             Profile</button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownProfileButton">
-            <button class="dropdown-item" ng-click="toggleProfileView()"><i class="fas fa-edit"></i> Edit Profile</button>
-            <button class="dropdown-item" ng-click="toggleLogoutView()"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+            <button class="dropdown-item" ng-click="toggleProfileView()"><i class="fas fa-edit"></i> Edit
+              Profile</button>
+            <button class="dropdown-item" ng-click="toggleLogoutView()"><i class="fas fa-sign-out-alt"></i> Sign
+              Out</button>
           </div>
         </div>
       </form>
@@ -74,8 +78,6 @@
       </div>
     </div>
 
-
-
     <!-- =================================================================== -->
     <!-- Main Dashboard -->
     <!-- =================================================================== -->
@@ -94,8 +96,8 @@
           <select ng-model="selectedLocation.woeid" ng-options="loc.woeid as loc.name for loc in locationArr"
             class="custom-select">
           </select>
-          <button style="margin-top:20px;" class="btn btn-primary" type="button"
-            ng-click="filterTrendsByLoc()"><i class="fas fa-filter"></i> Filter</button>
+          <button style="margin-top:20px;" class="btn btn-primary" type="button" ng-click="filterTrendsByLoc()"><i
+              class="fas fa-filter"></i> Filter</button>
         </div>
       </div>
 
@@ -103,49 +105,7 @@
       <!-- Trending Tool Page -->
       <!-- ------------------------------------------------------------------- -->
       <div ng-if="showTrendsPage" class="col-9 col-lg-9" id="Trending">
-        <!--<div ng-include="'trends.html'"></div>-->
-        <h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
-        <button type="button" class="btn btn-light" ng-click="showTrendsTool()"><a
-            href="javascript:SwapDivsWithClick('trending','trendsData')">See
-            Data {{location}}</a></button>
-        <!--<button type="button" class="btn btn-light">Test</button>-->
-        <div id="trends" class="container">
-          <div class="col-9 col-lg-10">
-            <!--<h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>-->
-
-            <div class="display-container" id="trending" style="display:block">
-
-              <!-- Repeat Trend topics for each trend in array -->
-              <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null">
-                <a href="{{ trend.url }}" style="color: black">{{trend.name}}</a>
-
-              </div>
-
-              <!-- ------------------------------------------------------------------- -->
-              <!-- Query Tool Page -->
-              <!-- ------------------------------------------------------------------- -->
-              <div ng-if="showQueryPage" class="col-9 col-lg-10" id="Query">
-                <div ng-include="'queryTool.html'"></div>
-              </div>
-
-
-
-
-            </div>
-            <div id="trendsData" class="display-container" style="display: none">
-
-              <button type="button" class="btn btn-light" onclick="toggle(this)"><a
-                  href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar Graph</a></button>
-              <canvas id="pieChart"></canvas>
-              <canvas id="barChart" style="display:none"></canvas>
-              <!-- <canvas id="bubbleChart" style ="display:none"> </canvas>-->
-
-
-
-
-            </div>
-          </div>
-        </div>
+        <div ng-include="'trends.html'"></div>
       </div>
 
       <!-- ------------------------------------------------------------------- -->
@@ -155,16 +115,7 @@
         <div ng-include="'queryTool.html'"></div>
       </div>
 
-      <!-- =================================================================== -->
-      <!-- Profile Page View -->
-      <!-- =================================================================== -->
-      <!-- <div class="container profile-page" ng-if="showProfilePage"> -->
-      <!-- <h1 class="text-center" style="margin-bottom: 20px;">Profile</h1> -->
-      <!-- </div> -->
-
-
     </div>
-
 
     <!-- =================================================================== -->
     <!-- Profile Page View -->
@@ -176,21 +127,19 @@
 
 
 
-
-
     <!-- Add all html code above this line! -->
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
 
 
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
@@ -222,8 +171,6 @@
       }
     }
   </script>
-
-
 
 </body>
 
