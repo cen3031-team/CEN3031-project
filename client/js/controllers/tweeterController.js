@@ -35,6 +35,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.toggleDashboardView = function () {
       $scope.showDashboard = true;
       $scope.showTrendsPage = true;
+      $scope.showQueryPage = false;
       $scope.showLoginForm = false;
       $scope.showQueryPage = false;
       $scope.showSignupForm = false;
@@ -81,41 +82,20 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     $scope.showQueryTool = function () {
       $scope.showQueryPage = true;
       $scope.showTrendsPage = false;
-      $scope.showLoginForm = false;
-      $scope.showSignupForm = false;
-      $scope.showProfilePage = false;
     }
 
     // Toggle Trends Tool View
     $scope.showTrendsTool = function () {
       console.log("trying trends");
+      Trends.renderPieChart($scope.trendsArr);
       $scope.showTrendsPage = true;
       $scope.showQueryPage = false;
-      $scope.showLoginForm = false;
-      $scope.showSignupForm = false;
-      $scope.showProfilePage = false;
+
     }
 
     // Checks whether user is logged in
     $scope.isLoggedIn = function () {
       return ($scope.user.id == null)
-    }
-
-    // Toggle Query Tool View
-    $scope.showQueryTool = function () {
-      $scope.showQueryPage = true;
-      $scope.showTrendsPage = false;
-      $scope.showProfilePage = false;
-
-    }
-
-    // Toggle Trends Tool View
-    $scope.showTrendsTool = function () {
-      Trends.renderPieChart($scope.trendsArr);
-      $scope.showQueryPage = false;
-      $scope.showTrendsPage = true;
-      $scope.showProfilePage = false;
-
     }
 
     $scope.selectedLocation = {
@@ -129,6 +109,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.trendsArr = response.data.trends;
         $scope.location = response.data.locations[0].name;
 
+        Trends.renderPieChart($scope.trendsArr);
         // console.log($scope.trends);
       }, function (error) {
         console.log('Unable to retrieve listings:', error);
@@ -274,6 +255,8 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       }, function (error) {
         console.log("Error getting query data: " + error);
       });
+
+      
     }
 
 

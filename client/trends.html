@@ -1,29 +1,20 @@
-<h3 class="subheading"><i class="fas fa-chart-line"></i> testing Trending {{location}}</h3>
-<button type="button" class="btn btn-light"><a href="javascript:SwapDivsWithClick('trending','trendsData')">See
-    Data {{location}}</a></button>
-<!--<button type="button" class="btn btn-light">Test</button>-->
+<h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>
+<button type="button" class="btn btn-light" id="trendsbtn" onclick="SwapDivsWithClick('trending','trendsData')" ng-click="showTrendsTool()">See
+    Data {{location}}</button>
 <div id="trends" class="container">
   <div class="col-9 col-lg-10">
-    <!--<h3 class="subheading"><i class="fas fa-chart-line"></i> Trending {{location}}</h3>-->
-
-    <div class="display-container" id="trending">
-
+    <div class="display-container" id="trending" style="display:block">
       <!-- Repeat Trend topics for each trend in array -->
-      <div ng-repeat="trend in trendsArr" class="trendCard">
-        {{trend.name}}
+      <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null">
+        <a href="{{ trend.url }}" style="color: black">{{trend.name}}</a>
       </div>
     </div>
     <div id="trendsData" class="display-container" style="display: none">
-
       <button type="button" class="btn btn-light" onclick="toggle(this)"><a
           href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar Graph</a></button>
       <canvas id="pieChart"></canvas>
       <canvas id="barChart" style="display:none"></canvas>
       <!-- <canvas id="bubbleChart" style ="display:none"> </canvas>-->
-
-
-
-
     </div>
   </div>
 </div>
