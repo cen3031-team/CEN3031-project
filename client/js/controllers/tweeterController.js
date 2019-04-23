@@ -6,6 +6,8 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     /* Get all the trends, then bind it to the scope */
     Trends.getAll(1).then(function (response) {
       $scope.trendsArr = response.data.trends;
+      $scope.trendsArr.sort((a, b) => (a.tweet_volume < b.tweet_volume) ? 1 : (a.tweet_volume === b.tweet_volume) ? ((a.name < b.name) ? 1 : -1) : -1);
+
       $scope.location = response.data.locations[0].name;
 
       // console.log($scope.trends);
@@ -15,9 +17,8 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     // Pull Location Data
     Trends.getLocation().then(function (response) {
-      $scope.locationArr= response.data;
-      console.log(response.data[3]);
-    }, function(error) {
+      $scope.locationArr = response.data;
+    }, function (error) {
       console.log("Unable to fetch locations");
     })
 
@@ -211,20 +212,51 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       tweetArray: []
     }
 
+    $scope.sortOptions = {
+      options: [
+        "popular",
+        "recent"
+      ]
+    };
+
+    // Formate big nums
+    $scope.formatNums = function(num) {
+      if (num > 1000) {
+        return numeral(num).format('0.00 a');
+      } else {
+        return num;
+      }
+    }
+
     $scope.showHelpText = false;
     $scope.helpText = "Unable to find related tweet. Please try another query!";
     $scope.returnedQuery = "";
+    $scope.selectedSort = {
+      option: "popular"
+    };
     // Query search button event handler
     $scope.searchTweet = function () {
       $scope.query.tweetArray.length = 0;
-      Trends.getTweets($scope.query.text).then(function (response) {
-        console.log(response.data);
+      $scope.queryObj = {
+        queryText: $scope.query.text,
+        sortOption: $scope.selectedSort.option
+      };
+
+      Trends.getTweets($scope.queryObj).then(function (response) {
         if (response.data.statuses.length == 0) {
           $scope.showHelpText = true;
         } else {
           $scope.showHelpText = false;
           $scope.returnedQuery = response.data.search_metadata.query;
           $scope.query.tweetArray = response.data.statuses;
+
+          $scope.query.tweetArray.forEach(tweet => {
+            tweet.user.followers_count = $scope.formatNums(tweet.user.followers_count);
+            tweet.user.friends_count = $scope.formatNums(tweet.user.friends_count);
+            tweet.favorite_count = $scope.formatNums(tweet.favorite_count);
+            tweet.retweet_count = $scope.formatNums(tweet.retweet_count);
+            tweet.user.location = tweet.user.location == "" ? "---" : tweet.user.location;
+          });
         }
       }, function (error) {
         console.log("Error getting query data: " + error);

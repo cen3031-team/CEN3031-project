@@ -4,7 +4,7 @@ var queries = require('../controllers/queries.server.controller.js'),
     router = express.Router();
 	
 	
-router.route('/:queryId')
-	.get(queries.results);
+router.route('/')
+	.put(queries.results);
 	
 module.exports = router;

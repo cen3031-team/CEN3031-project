@@ -1,10 +1,10 @@
 <div class="container-fluid">
-
   <div style="margin:30px;" ng-if="showHelpText" class="alert alert-warning" role="alert">
     Unable to find related tweets. Please try another query!
   </div>
 
-  <h4 class="query-subtitle" ng-if="query.tweetArray.length == 0">Use the search bar above to lookup popular tweets</h4>
+  <h4 class="query-subtitle" ng-if="query.tweetArray.length == 0">Use the search bar above to lookup popular tweets
+  </h4>
   <div ng-if="query.tweetArray.length != 0" class="tweet-container container-fluid">
     <h6 class="query-subtitle">Showing results for {{returnedQuery}}</h6>
     <div ng-repeat="tweet in query.tweetArray" class="tweet-card">
@@ -20,14 +20,19 @@
           </div>
         </div>
         <hr>
-        <p class="float-left"><i class="fas fa-users"></i> <strong>Followers</strong> {{tweet.user.followers_count}}<br></p>
-        <p class="float-left"><i class="far fa-grin-squint"></i> <strong>Friends</strong> {{tweet.user.friends_count}}<br></p>
-        <p class="float-left"><i class="fas fa-map-marker-alt"></i> <strong>Location</strong> {{tweet.user.location}}<br></p>
+        <p class="float-left"><i class="fas fa-users"></i> <strong>Followers</strong> {{tweet.user.followers_count}}<br>
+        </p>
+        <p class="float-left"><i class="far fa-grin-squint"></i> <strong>Friends</strong>
+          {{tweet.user.friends_count}}<br></p>
+        <p class="float-left"><i class="fas fa-map-marker-alt"></i> <strong>Location</strong>
+          {{tweet.user.location}}<br></p>
 
       </div>
       <div class="tweetText-section">
         <blockquote class="blockquote text-right">
-          <p class="mb-0">{{tweet.full_text}}</p>
+          <a class="tweet-link" target="_blank" href="{{tweet.extended_enteties.media[0].url}}">
+            <p class="mb-0">{{tweet.full_text}}</p>
+          </a>
           <footer><span class="badge badge-danger"><i class="fas fa-heart"></i> {{tweet.favorite_count}}</span> <span
               class="badge badge-primary"><i class="fas fa-retweet"></i> {{tweet.retweet_count}}</span></footer>
         </blockquote>

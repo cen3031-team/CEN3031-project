@@ -11,9 +11,9 @@ angular.module('trends', []).factory('Trends', function ($http) {
       return $http.get('/api/location');
     },
 
-    // Search popular tweets
+    // Search tweets by popularity or recent
     getTweets: function (query) {
-      return $http.get('/api/search/' + query);
+      return $http.put('/api/search/', query);
     },
 
 
