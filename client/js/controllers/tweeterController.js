@@ -109,7 +109,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     }
 
     // Toggle Trends Tool View
-    $scope.showTrendsTool = function () {
+      $scope.showTrendsTool = function () {
       Trends.renderPieChart($scope.trendsArr);
       $scope.showQueryPage = false;
       $scope.showTrendsPage = true;
