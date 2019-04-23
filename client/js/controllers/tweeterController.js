@@ -86,14 +86,14 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
     }
 
     // Toggle Trends Tool View
-    $scope.showTrendsTool = function () {
+    /*$scope.showTrendsTool = function () {
       console.log("trying trends");
       $scope.showTrendsPage = true;
       $scope.showQueryPage = false;
       $scope.showLoginForm = false;
       $scope.showSignupForm = false;
       $scope.showProfilePage = false;
-    }
+    }*/
 
     // Checks whether user is logged in
     $scope.isLoggedIn = function () {
@@ -110,10 +110,13 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     // Toggle Trends Tool View
     $scope.showTrendsTool = function () {
-      Trends.renderPieChart($scope.trendsArr);
+      //Trends.renderPieChart($scope.trendsArr);
+      Trends.updateCharts($scope.trendsArr);
       $scope.showQueryPage = false;
       $scope.showTrendsPage = true;
       $scope.showProfilePage = false;
+      $scope.showLoginForm = false;
+      $scope.showSignupForm = false;
 
     }
 

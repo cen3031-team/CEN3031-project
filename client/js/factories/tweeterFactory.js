@@ -32,6 +32,13 @@ angular.module('trends', []).factory('Trends', function ($http) {
       return $http.post('/api/user/login', credentials);
     },
 
+    updateCharts: function(trendsArr){
+      var pie = document.getElementById("pieChart");
+      var bar = document.getElementById("barChart");
+        pie.update();
+        bar.update();
+    },
+
     renderPieChart: function (trendsArr) {
       /*function random_rgba() {
       var o = Math.round, r = Math.random, s = 255;
