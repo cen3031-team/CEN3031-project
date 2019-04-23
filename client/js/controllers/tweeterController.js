@@ -1,14 +1,27 @@
 angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
   function ($scope, Trends) {
+
+    $scope.locationArr = [];
+
     /* Get all the trends, then bind it to the scope */
-    Trends.getAll().then(function (response) {
+    Trends.getAll(1).then(function (response) {
       $scope.trendsArr = response.data.trends;
+      $scope.trendsArr.sort((a, b) => (a.tweet_volume < b.tweet_volume) ? 1 : (a.tweet_volume === b.tweet_volume) ? ((a.name < b.name) ? 1 : -1) : -1);
+
       $scope.location = response.data.locations[0].name;
 
       // console.log($scope.trends);
     }, function (error) {
       console.log('Unable to retrieve listings:', error);
     });
+
+    // Pull Location Data
+    Trends.getLocation().then(function (response) {
+      $scope.locationArr = response.data;
+    }, function (error) {
+      console.log("Unable to fetch locations");
+    })
+
 
     // Frontend Toggles
     $scope.showLoginForm = true;
@@ -104,6 +117,23 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     }
 
+    $scope.selectedLocation = {
+      woeid: 1
+    };
+
+    // Filter trends by location
+    $scope.filterTrendsByLoc = function () {
+      Trends.getAll($scope.selectedLocation.woeid).then(function (response) {
+        $scope.trendsArr.length = 0;
+        $scope.trendsArr = response.data.trends;
+        $scope.location = response.data.locations[0].name;
+
+        // console.log($scope.trends);
+      }, function (error) {
+        console.log('Unable to retrieve listings:', error);
+      });
+    }
+
     // User object
     $scope.user = {
       first_name: "",
@@ -112,60 +142,6 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       password: "",
       id: null
     };
-
-    // var response = {
-    //   data: {
-    //     trends: [{
-    //       name: '#ENGvSCO',
-    //       url: 'http://twitter.com/search?q=%23ENGvSCO',
-    //       promoted_content: null,
-    //       query: '%23ENGvSCO',
-    //       tweet_volume: 22580
-    //     },
-    //     {
-    //       name: '#iTrustChowkidar',
-    //       url: 'http://twitter.com/search?q=%23iTrustChowkidar',
-    //       promoted_content: null,
-    //       query: '%23iTrustChowkidar',
-    //       tweet_volume: 21351
-    //     },
-    //     {
-    //       name: '#TeamGOT7',
-    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
-    //       promoted_content: null,
-    //       query: '%23TeamGOT7',
-    //       tweet_volume: 3729973
-    //     },
-    //     {
-    //       name: '#TeamGOT7',
-    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
-    //       promoted_content: null,
-    //       query: '%23TeamGOT7',
-    //       tweet_volume: 3729973
-    //     }, {
-    //       name: '#TeamGOT7',
-    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
-    //       promoted_content: null,
-    //       query: '%23TeamGOT7',
-    //       tweet_volume: 3729973
-    //     }, {
-    //       name: '#TeamGOT7',
-    //       url: 'http://twitter.com/search?q=%23TeamGOT7',
-    //       promoted_content: null,
-    //       query: '%23TeamGOT7',
-    //       tweet_volume: 3729973
-    //     }
-    //     ],
-    //     as_of: '2019-03-16T19:26:40Z',
-    //     created_at: '2019-03-16T19:24:08Z',
-    //     locations: [{
-    //       name: 'Worldwide',
-    //       woeid: 1
-    //     }]
-    //   }
-    // }
-    // $scope.trendsArr = response.data.trends;
-    // $scope.location = response.data.locations[0].name;
 
     // Create new user
     $scope.createUser = function () {
@@ -236,20 +212,51 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       tweetArray: []
     }
 
+    $scope.sortOptions = {
+      options: [
+        "popular",
+        "recent"
+      ]
+    };
+
+    // Formate big nums
+    $scope.formatNums = function(num) {
+      if (num > 1000) {
+        return numeral(num).format('0.00 a');
+      } else {
+        return num;
+      }
+    }
+
     $scope.showHelpText = false;
     $scope.helpText = "Unable to find related tweet. Please try another query!";
     $scope.returnedQuery = "";
+    $scope.selectedSort = {
+      option: "popular"
+    };
     // Query search button event handler
     $scope.searchTweet = function () {
       $scope.query.tweetArray.length = 0;
-      Trends.getTweets($scope.query.text).then(function (response) {
-        console.log(response.data);
+      $scope.queryObj = {
+        queryText: $scope.query.text,
+        sortOption: $scope.selectedSort.option
+      };
+
+      Trends.getTweets($scope.queryObj).then(function (response) {
         if (response.data.statuses.length == 0) {
           $scope.showHelpText = true;
         } else {
           $scope.showHelpText = false;
           $scope.returnedQuery = response.data.search_metadata.query;
           $scope.query.tweetArray = response.data.statuses;
+
+          $scope.query.tweetArray.forEach(tweet => {
+            tweet.user.followers_count = $scope.formatNums(tweet.user.followers_count);
+            tweet.user.friends_count = $scope.formatNums(tweet.user.friends_count);
+            tweet.favorite_count = $scope.formatNums(tweet.favorite_count);
+            tweet.retweet_count = $scope.formatNums(tweet.retweet_count);
+            tweet.user.location = tweet.user.location == "" ? "---" : tweet.user.location;
+          });
         }
       }, function (error) {
         console.log("Error getting query data: " + error);

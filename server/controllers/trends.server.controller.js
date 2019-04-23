@@ -1,24 +1,23 @@
 
 /* Dependencies */
-var mongoose = require('mongoose'),
-    request = require('request'),
-    config = require('../config/config');
-    Trend = require('../models/trends.server.model.js');
+const request = require('request'),
+  config = require('../config/config');
 
 
-    /* Retreive all the trends */
-exports.list = function(req, res) {
+/* Retreive all the trends */
+exports.list = function (req, res) {
   // Configure req object
+  let woeid = req.params.woeid;
   const reqOptions = {
     method: 'GET',
-    url: 'https://api.twitter.com/1.1/trends/place.json?id=1',
+    url: 'https://api.twitter.com/1.1/trends/place.json?id=' + woeid,
     headers: {
       'Authorization': config.bearerToken
     }
   }
 
   request(reqOptions, (error, response, body) => {
-	if (error) res.status(400).send(error);
+    if (error) res.status(400).send(error);
     const trendArr = JSON.parse(body)[0];
     res.json(trendArr);
   });
@@ -44,7 +43,7 @@ exports.list = function(req, res) {
 // };
 
 /* Show the current listing */
-exports.read = function(req, res) {
+exports.read = function (req, res) {
   /* send back the listing as json from the request */
   res.json(req.trend);
 };
@@ -77,11 +76,11 @@ exports.read = function(req, res) {
 //   })
 // };
 
-/* 
-  Middleware: find a listing by its ID, then pass it to the next request handler. 
+/*
+  Middleware: find a listing by its ID, then pass it to the next request handler.
 
-  Find the listing using a mongoose query, 
-        bind it to the request object as the property 'listing', 
+  Find the listing using a mongoose query,
+        bind it to the request object as the property 'listing',
         then finally call next
  */
 // exports.listingByID = function(req, res, next, id) {
