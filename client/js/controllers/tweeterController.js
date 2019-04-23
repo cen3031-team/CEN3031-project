@@ -110,8 +110,8 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
 
     // Toggle Trends Tool View
     $scope.showTrendsTool = function () {
-      //Trends.renderPieChart($scope.trendsArr);
-      Trends.updateCharts($scope.trendsArr);
+      Trends.renderPieChart($scope.trendsArr);
+      //Trends.updateCharts($scope.trendsArr);
       $scope.showQueryPage = false;
       $scope.showTrendsPage = true;
       $scope.showProfilePage = false;
@@ -130,7 +130,7 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.trendsArr.length = 0;
         $scope.trendsArr = response.data.trends;
         $scope.location = response.data.locations[0].name;
-
+        Trends.updateCharts($scope.trendsArr);
         // console.log($scope.trends);
       }, function (error) {
         console.log('Unable to retrieve listings:', error);
