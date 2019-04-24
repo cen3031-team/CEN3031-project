@@ -163,9 +163,16 @@ if(!created){
       }
     }
     else{
+
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > 1000){
+          break;
+        }
+      }
       myChart.destroy();
       
-      updateCharts(trendsArr);
+     // updateCharts(trendsArr);
     }
     }
 
