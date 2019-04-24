@@ -1,5 +1,5 @@
 angular.module('trends', []).factory('Trends', function ($http) {
-
+  var myChart;
   var methods = {
     // Returns All Global Trends
     getAll: function (woeid) {
@@ -30,6 +30,28 @@ angular.module('trends', []).factory('Trends', function ($http) {
     // Login User
     loginUser: function (credentials) {
       return $http.post('/api/user/login', credentials);
+    },
+
+    clearCharts: function () {
+
+
+      var pieElement = document.getElementById("pieChart");
+      var barElement = document.getElementById("barChart");
+      if (pieElement == null || barElement == null) {
+        return;
+      }
+
+      myChart.clear();
+      myChart.destroy();
+
+      pieElement.remove();
+      barElement.remove();
+
+      var chartContainer = document.getElementById("trendsData");
+      chartContainer.innerHTML += '<canvas id="pieChart"></canvas>';
+      chartContainer.innerHTML += '<canvas id="barChart" style="display:none"></canvas>';
+
+      console.log("resetting");
     },
 
     renderPieChart: function (trendsArr) {
@@ -67,7 +89,7 @@ angular.module('trends', []).factory('Trends', function ($http) {
         pie = pie.getContext('2d');
         bar = bar.getContext('2d');
 
-        var myChart = new Chart(pie, {
+        myChart = new Chart(pie, {
           type: 'pie',
           data: {
             labels: labels,
@@ -123,6 +145,7 @@ angular.module('trends', []).factory('Trends', function ($http) {
           }
         });
       }
+      return myChart;
     }
 
   };

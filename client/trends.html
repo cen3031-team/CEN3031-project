@@ -2,7 +2,7 @@
 <button type="button" class="btn btn-light" id="trendsbtn" onclick="SwapDivsWithClick('trending','trendsData')" ng-click="showTrendsTool()">See
     Data {{location}}</button>
 <div id="trends" class="container">
-  <div class="col-9 col-lg-10">
+  <div id="trendContainerDiv" class="col-9 col-lg-10">
     <div class="display-container" id="trending" style="display:block">
       <!-- Repeat Trend topics for each trend in array -->
       <div ng-repeat="trend in trendsArr" class="trendCard" ng-hide="trend.tweet_volume == null">
@@ -14,7 +14,6 @@
           href="javascript:SwapDivsWithClick('pieChart','barChart')">Bar Graph</a></button>
       <canvas id="pieChart"></canvas>
       <canvas id="barChart" style="display:none"></canvas>
-      <!-- <canvas id="bubbleChart" style ="display:none"> </canvas>-->
     </div>
   </div>
 </div>

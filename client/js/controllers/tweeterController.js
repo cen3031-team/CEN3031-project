@@ -84,10 +84,17 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
       $scope.showTrendsPage = false;
     }
 
+    $scope.pieChart = null;
+    $scope.firstDraw = true;
+
     // Toggle Trends Tool View
     $scope.showTrendsTool = function () {
+      if (!$scope.firstDraw) {
+        Trends.clearCharts();
+      }
       console.log("trying trends");
-      Trends.renderPieChart($scope.trendsArr);
+      $scope.pieChart = Trends.renderPieChart($scope.trendsArr);
+      $scope.firstDraw = false;
       $scope.showTrendsPage = true;
       $scope.showQueryPage = false;
 
@@ -109,6 +116,9 @@ angular.module('trends').controller('TrendsController', ['$scope', 'Trends',
         $scope.trendsArr = response.data.trends;
         $scope.location = response.data.locations[0].name;
 
+        if (!($scope.firstDraw)) {
+          Trends.clearCharts();
+        }
         Trends.renderPieChart($scope.trendsArr);
         // console.log($scope.trends);
       }, function (error) {
